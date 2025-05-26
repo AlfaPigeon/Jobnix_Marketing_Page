@@ -36,7 +36,7 @@
                     </h1>
                     <p class="hero-subtitle">
                         Introducing Jobnix – The intelligent HR middleware that transforms your recruitment pipeline. 
-                        Our AI agent chats with candidates, standardizes their data, and uncovers the critical insights 
+                        Our AI agent chats with candidates, standardizes their data, and uncovers the critical insights and even ranks them.
                         you need to make the best hires, faster.
                     </p>
                     <div class="hero-buttons">
@@ -71,14 +71,264 @@
                                 <h3>Jobnix AI Assistant</h3>
                                 <span class="status">Online</span>
                             </div>
-                        </div>
-                        <div class="chat-messages" id="chatMessages">
+                        </div>                        <div class="chat-messages" id="chatMessages">
                             <!-- Messages will be populated by JavaScript -->
+                        </div>
+                        <div class="dropbox-container" id="dropboxContainer" style="display: none;">
+                            <div class="dropbox" id="dropbox">
+                                <div class="dropbox-content">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Drop your CV here or click to browse</p>
+                                    <span class="file-types">PDF, DOC, DOCX files only</span>
+                                </div>
+                                <div class="upload-progress" id="uploadProgress" style="display: none;">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" id="progressFill"></div>
+                                    </div>
+                                    <span class="progress-text" id="progressText">Uploading... 0%</span>
+                                </div>
+                                <div class="upload-success" id="uploadSuccess" style="display: none;">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>CV uploaded successfully!</span>
+                                </div>
+                            </div>
                         </div>
                         <div class="chat-input">
                             <input type="text" placeholder="Type your response..." disabled>
                             <button><i class="fas fa-paper-plane"></i></button>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>    </section>    <!-- Workflow Animation Section -->
+    <section class="workflow-animation">
+        <div class="container">
+            <div class="workflow-header">
+                <h2 class="section-title">Experience Jobnix in Action</h2>
+                <p class="workflow-subtitle">Watch our AI transform recruitment from chaos to clarity</p>
+            </div>
+            
+            <!-- Central Animation Stage -->
+            <div class="workflow-stage">
+                <!-- Background Flow Lines -->
+                <div class="flow-lines">
+                    <div class="flow-line" data-line="1"></div>
+                    <div class="flow-line" data-line="2"></div>
+                    <div class="flow-line" data-line="3"></div>
+                </div>
+                
+                <!-- Timeline Progress -->
+                <div class="timeline-progress">
+                    <div class="timeline-track"></div>
+                    <div class="timeline-fill" id="timelineFill"></div>
+                    <div class="timeline-markers">
+                        <div class="timeline-marker" data-step="1">
+                            <div class="marker-dot"></div>
+                            <span class="marker-label">Engage</span>
+                        </div>
+                        <div class="timeline-marker" data-step="2">
+                            <div class="marker-dot"></div>
+                            <span class="marker-label">Extract</span>
+                        </div>
+                        <div class="timeline-marker" data-step="3">
+                            <div class="marker-dot"></div>
+                            <span class="marker-label">Analyze</span>
+                        </div>
+                        <div class="timeline-marker" data-step="4">
+                            <div class="marker-dot"></div>
+                            <span class="marker-label">Rank</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content Area -->
+                <div class="workflow-content">
+                    <!-- Step 1: Candidate Engagement -->
+                    <div class="workflow-scene active" id="scene1">
+                        <div class="scene-visual">
+                            <div class="interaction-demo">
+                                <div class="demo-window">
+                                    <div class="window-header">
+                                        <div class="window-controls">
+                                            <span class="control"></span>
+                                            <span class="control"></span>
+                                            <span class="control"></span>
+                                        </div>
+                                        <div class="window-title">
+                                            <i class="fas fa-robot"></i>
+                                            Jobnix AI Assistant
+                                        </div>
+                                    </div>
+                                    <div class="chat-area" id="chatArea">
+                                        <!-- Chat messages will be populated here -->
+                                    </div>
+                                    <div class="upload-zone" id="uploadZone" style="display: none;">
+                                        <div class="upload-visual">
+                                            <div class="file-icon">
+                                                <i class="fas fa-file-pdf"></i>
+                                            </div>
+                                            <div class="upload-text">
+                                                <span>Uploading CV...</span>
+                                                <div class="upload-progress">
+                                                    <div class="progress-bar">
+                                                        <div class="progress-fill" id="uploadProgress"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scene-info">
+                            <h3>Smart Candidate Engagement</h3>
+                            <p>Our AI assistant welcomes candidates and gathers essential information through natural conversation.</p>
+                            <div class="feature-tags">
+                                <span class="tag">Natural Language</span>
+                                <span class="tag">Document Processing</span>
+                                <span class="tag">Real-time</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Data Extraction -->
+                    <div class="workflow-scene" id="scene2">
+                        <div class="scene-visual">
+                            <div class="extraction-demo">
+                                <div class="data-transform">
+                                    <div class="raw-cv">
+                                        <div class="cv-header">Raw CV Data</div>
+                                        <div class="cv-content">
+                                            <div class="cv-line messy"></div>
+                                            <div class="cv-line messy"></div>
+                                            <div class="cv-line messy"></div>
+                                            <div class="cv-line messy"></div>
+                                        </div>
+                                    </div>
+                                    <div class="transform-arrow">
+                                        <i class="fas fa-magic"></i>
+                                    </div>
+                                    <div class="structured-data">
+                                        <div class="data-header">Structured Profile</div>
+                                        <div class="data-grid" id="dataGrid">
+                                            <!-- Data fields will be populated here -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scene-info">
+                            <h3>Intelligent Data Extraction</h3>
+                            <p>Advanced AI transforms unstructured CVs into consistent, comparable candidate profiles.</p>
+                            <div class="feature-tags">
+                                <span class="tag">Format Agnostic</span>
+                                <span class="tag">AI Parsing</span>
+                                <span class="tag">Standardized Output</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: AI Analysis -->
+                    <div class="workflow-scene" id="scene3">
+                        <div class="scene-visual">
+                            <div class="analysis-demo">
+                                <div class="ai-brain-visual">
+                                    <div class="brain-core">
+                                        <i class="fas fa-brain"></i>
+                                        <div class="neural-network">
+                                            <div class="neural-node" data-node="1"></div>
+                                            <div class="neural-node" data-node="2"></div>
+                                            <div class="neural-node" data-node="3"></div>
+                                            <div class="neural-node" data-node="4"></div>
+                                            <div class="neural-node" data-node="5"></div>
+                                            <div class="neural-connections">
+                                                <div class="connection" data-connection="1"></div>
+                                                <div class="connection" data-connection="2"></div>
+                                                <div class="connection" data-connection="3"></div>
+                                                <div class="connection" data-connection="4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="analysis-metrics" id="analysisMetrics">
+                                        <!-- Analysis results will be populated here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scene-info">
+                            <h3>Deep AI Analysis</h3>
+                            <p>Multi-dimensional evaluation considering skills, experience, cultural fit, and role requirements.</p>
+                            <div class="feature-tags">
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">Multi-criteria</span>
+                                <span class="tag">Contextual</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Smart Ranking -->
+                    <div class="workflow-scene" id="scene4">
+                        <div class="scene-visual">
+                            <div class="ranking-demo">
+                                <div class="leaderboard">
+                                    <div class="leaderboard-header">
+                                        <h4>Candidate Ranking</h4>
+                                        <span class="total-candidates">Based on 247 applicants</span>
+                                    </div>
+                                    <div class="ranking-list" id="finalRanking">
+                                        <!-- Rankings will be populated here -->
+                                    </div>
+                                </div>
+                                <div class="insights-panel">
+                                    <h5>Key Insights</h5>
+                                    <div class="insight-item">
+                                        <i class="fas fa-star"></i>
+                                        <span>Top 3 candidates exceed requirements</span>
+                                    </div>
+                                    <div class="insight-item">
+                                        <i class="fas fa-chart-line"></i>
+                                        <span>87% improvement in match quality</span>
+                                    </div>
+                                    <div class="insight-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>92% reduction in screening time</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scene-info">
+                            <h3>Intelligent Ranking System</h3>
+                            <p>Candidates are ranked by compatibility score with detailed insights for informed decision-making.</p>
+                            <div class="feature-tags">
+                                <span class="tag">Predictive Scoring</span>
+                                <span class="tag">Actionable Insights</span>
+                                <span class="tag">Decision Support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    
+
+            <!-- Results Summary -->
+            <div class="results-summary" id="resultsSummary" style="display: none;">
+                <div class="summary-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">3.2s</div>
+                        <div class="stat-label">Processing Time</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">247</div>
+                        <div class="stat-label">Candidates Processed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Match Accuracy</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">12hrs</div>
+                        <div class="stat-label">Time Saved</div>
                     </div>
                 </div>
             </div>
@@ -105,11 +355,7 @@
                     <h3>Losing Top Talent</h3>
                     <p>Lengthy screening processes mean the best candidates are already off the market.</p>
                 </div>
-                <div class="pain-card">
-                    <i class="fas fa-rocket"></i>
-                    <h3>Startup Scramble</h3>
-                    <p>Finding the right fit quickly is the difference between sprinting ahead and falling behind.</p>
-                </div>
+
             </div>
         </div>
     </section>
@@ -203,13 +449,7 @@
                     <h3>Deeper Insights</h3>
                     <p>Our AI agent gathers intelligence by asking targeted questions, giving you a richer understanding of each candidate's suitability.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Smarter Over Time</h3>
-                    <p>Data from previous interactions continuously refines the AI's capabilities. Your hiring process gets smarter with every candidate.</p>
-                </div>
+
             </div>
         </div>
     </section>

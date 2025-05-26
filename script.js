@@ -1,7 +1,7 @@
 // Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all functionality
+document.addEventListener('DOMContentLoaded', function() {    // Initialize all functionality
     initChatSimulation();
+    initWorkflowAnimation();
     initTabSwitching();
     initSmoothScrolling();
     initScrollAnimations();
@@ -32,18 +32,12 @@ function initChatSimulation() {
             type: 'user',
             message: "I have 8 years of experience in digital marketing, specializing in content strategy and social media campaigns.",
             delay: 6500
-        },
-        {
+        },        {
             type: 'bot',
             message: "That's great! Could you please upload your CV? I'll extract the relevant information and ask you some specific questions about your qualifications.",
-            delay: 8500
-        },
-        {
-            type: 'user',
-            message: "📄 CV_Sarah_Johnson.pdf uploaded",
-            delay: 10000
-        },
-        {
+            delay: 8500,
+            showDropbox: true
+        },        {
             type: 'bot',
             message: "Perfect! I've analyzed your CV. I notice you have experience with Google Analytics and Facebook Ads. Have you worked with programmatic advertising platforms?",
             delay: 12000
@@ -89,12 +83,17 @@ function initChatSimulation() {
             // Show typing indicator for bot messages
             if (msg.type === 'bot') {
                 showTypingIndicator();
-                
-                setTimeout(() => {
+                  setTimeout(() => {
                     hideTypingIndicator();
                     displayMessage(msg.type, msg.message);
-                    messageIndex++;
-                    addMessage();
+                    
+                    // Show dropbox if this message requires it
+                    if (msg.showDropbox) {
+                        showDropbox();
+                    } else {
+                        messageIndex++;
+                        addMessage();
+                    }
                 }, 1500);
             } else {
                 displayMessage(msg.type, msg.message);
@@ -138,10 +137,504 @@ function initChatSimulation() {
         if (typing) {
             typing.remove();
         }
+    }    // Start the conversation
+    addMessage();
+    
+    // Dropbox functionality
+    function showDropbox() {
+        const dropboxContainer = document.getElementById('dropboxContainer');
+        const dropbox = document.getElementById('dropbox');
+        
+        dropboxContainer.style.display = 'block';
+        
+        // Simulate automatic file drop after 3 seconds
+        setTimeout(() => {
+            simulateFileUpload();
+        }, 3000);
+        
+        // Add click and drag event listeners for interactivity
+        dropbox.addEventListener('click', simulateFileUpload);
+        dropbox.addEventListener('dragover', handleDragOver);
+        dropbox.addEventListener('dragleave', handleDragLeave);
+        dropbox.addEventListener('drop', handleDrop);
     }
     
-    // Start the conversation
-    addMessage();
+    function handleDragOver(e) {
+        e.preventDefault();
+        document.getElementById('dropbox').classList.add('dragover');
+    }
+    
+    function handleDragLeave(e) {
+        e.preventDefault();
+        document.getElementById('dropbox').classList.remove('dragover');
+    }
+    
+    function handleDrop(e) {
+        e.preventDefault();
+        document.getElementById('dropbox').classList.remove('dragover');
+        simulateFileUpload();
+    }
+    
+    function simulateFileUpload() {
+        const dropboxContent = document.querySelector('.dropbox-content');
+        const uploadProgress = document.getElementById('uploadProgress');
+        const uploadSuccess = document.getElementById('uploadSuccess');
+        const progressFill = document.getElementById('progressFill');
+        const progressText = document.getElementById('progressText');
+        
+        // Hide dropbox content and show progress
+        dropboxContent.style.display = 'none';
+        uploadProgress.style.display = 'block';
+        
+        // Animate progress bar
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += Math.random() * 15 + 5; // Random increment between 5-20
+            
+            if (progress >= 100) {
+                progress = 100;
+                clearInterval(interval);
+                
+                // Show success state
+                setTimeout(() => {
+                    uploadProgress.style.display = 'none';
+                    uploadSuccess.style.display = 'flex';
+                    
+                    // Hide dropbox and continue conversation after success
+                    setTimeout(() => {
+                        document.getElementById('dropboxContainer').style.display = 'none';
+                        messageIndex++;
+                        addMessage();
+                    }, 2000);
+                }, 500);
+            }
+            
+            progressFill.style.width = progress + '%';
+            progressText.textContent = `Uploading... ${Math.floor(progress)}%`;
+            
+            // Add pulse animation during upload
+            if (progress < 100) {
+                progressFill.style.animation = 'uploadPulse 1s ease-in-out infinite';
+            } else {
+                progressFill.style.animation = 'none';
+            }
+        }, 200);
+    }
+}
+
+// Workflow Animation
+function initWorkflowAnimation() {
+    const workflowSection = document.querySelector('.workflow-animation');
+    const stepButtons = document.querySelectorAll('.step-button');
+    const playButton = document.getElementById('playWorkflow');
+    const pauseButton = document.getElementById('pauseWorkflow');
+    const resetButton = document.getElementById('resetWorkflow');
+    
+    let currentStep = 0;
+    let isPlaying = false;
+    let isScrollControlled = true;
+    let animationTimeouts = [];
+    let scrollTimeout = null; // Add throttling for scroll events
+    
+    // Set up scroll-based animation
+    const setupScrollAnimation = () => {
+        if (!workflowSection) return;
+        
+        window.addEventListener('scroll', handleScrollThrottled);
+        handleScroll(); // Initial check
+    };    
+    // Throttled scroll handler for better performance
+    const handleScrollThrottled = () => {
+        if (scrollTimeout) return;
+        scrollTimeout = setTimeout(() => {
+            handleScroll();
+            scrollTimeout = null;
+        }, 10); // Small delay to throttle scroll events
+    };
+
+    const handleScroll = () => {
+        if (!isScrollControlled) return;
+        
+        const rect = workflowSection.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const sectionHeight = rect.height;
+        const windowCenter = (windowHeight / 2);
+        
+        // Show/hide scroll progress indicator
+        const progressIndicator = document.getElementById('scrollProgress');
+        if (progressIndicator) {
+            if (rect.top <= windowHeight ) {
+                progressIndicator.classList.add('visible');
+            } else if (rect.bottom >= 0) {
+                progressIndicator.classList.remove('visible');
+            }
+        }
+        
+        // Only animate when section is in view
+        if (rect.bottom <= 0 || rect.top >= windowHeight) return;
+        
+        // Calculate progress through the section based on how much has scrolled past the center
+        // We want each step to trigger when it reaches the middle of the screen
+        const sectionTop = rect.top;
+        const scrollProgress = Math.max(0, Math.min(1, (windowCenter - sectionTop) / sectionHeight));
+        
+        // Divide the section into 4 equal parts for 4 steps
+        // Each step will be active for 25% of the scroll range
+        // Add some overlap to ensure smooth transitions
+        let newStep;
+        if (scrollProgress <= 0.35) {
+            newStep = 0;
+        } else if (scrollProgress <= 0.45) {
+            newStep = 1;
+        } else if (scrollProgress <= 0.55) {
+            newStep = 2;
+        } else {
+            newStep = 3;
+        }
+        
+        // Only update if step has changed
+        if (newStep !== currentStep) {
+            currentStep = newStep;
+            updateTimelineProgress();
+            updateStepButtons();
+            updateScrollProgress();
+            showScene(currentStep);
+        }
+    };
+    
+    setupScrollAnimation();    
+    // Step button functionality
+    stepButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            isScrollControlled = false; // Disable scroll control when manually navigating
+            goToStep(index);
+            
+            // Re-enable scroll control after a delay
+            setTimeout(() => {
+                isScrollControlled = true;
+            }, 2000);
+        });
+    });
+    
+    // Playback controls
+    if (playButton) {
+        playButton.addEventListener('click', () => {
+            isScrollControlled = false; // Switch to time-based animation
+            playWorkflowAnimation();
+        });
+    }
+    
+    if (pauseButton) {
+        pauseButton.addEventListener('click', () => {
+            pauseWorkflowAnimation();
+            isScrollControlled = true; // Return to scroll-based control
+        });
+    }
+    
+    if (resetButton) {
+        resetButton.addEventListener('click', () => {
+            resetWorkflowAnimation();
+            isScrollControlled = true; // Return to scroll-based control
+        });
+    }    
+    function playWorkflowAnimation() {
+        if (isPlaying) return;
+        
+        isPlaying = true;
+        updatePlaybackControls();
+        
+        // Start from current step or beginning
+        if (currentStep >= 4) {
+            currentStep = 0;
+            resetWorkflowAnimation();
+        }
+        
+        playStep(currentStep);
+    }
+    
+    function playStep(stepIndex) {
+        if (stepIndex >= 4) {
+            isPlaying = false;
+            updatePlaybackControls();
+            isScrollControlled = true; // Return to scroll control when done
+            return;
+        }
+        
+        currentStep = stepIndex;
+        updateTimelineProgress();
+        updateStepButtons();
+        showScene(stepIndex);
+        
+        // Auto-advance to next step after delay (only in manual playback mode)
+        if (!isScrollControlled) {
+            const timeout = setTimeout(() => {
+                if (isPlaying) {
+                    playStep(stepIndex + 1);
+                }
+            }, 4000);
+            
+            animationTimeouts.push(timeout);
+        }
+    }
+      function goToStep(stepIndex) {
+        currentStep = stepIndex;
+        updateTimelineProgress();
+        updateStepButtons();
+        updateScrollProgress();
+        showScene(stepIndex);
+    }
+    function pauseWorkflowAnimation() {
+        isPlaying = false;
+        animationTimeouts.forEach(timeout => clearTimeout(timeout));
+        animationTimeouts = [];
+        updatePlaybackControls();
+    }
+      function resetWorkflowAnimation() {
+        pauseWorkflowAnimation();
+        currentStep = 0;
+        updateTimelineProgress();
+        updateStepButtons();
+        updateScrollProgress();
+        
+        // Hide all scenes
+        const scenes = document.querySelectorAll('.workflow-scene');
+        scenes.forEach(scene => {
+            scene.classList.remove('active');
+        });
+        
+        // Clear dynamic content
+        clearSceneContent();
+        updatePlaybackControls();
+        
+        // Scroll to top of workflow section to reset scroll position
+        if (workflowSection) {
+            workflowSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }      function updateTimelineProgress() {
+        const progressFill = document.querySelector('.timeline-fill');
+        const markers = document.querySelectorAll('.timeline-marker');
+        
+        if (progressFill) {
+            // Calculate smooth progress based on current step and scroll position
+            const rect = workflowSection.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            const sectionHeight = rect.height;
+            const windowCenter = windowHeight / 2;
+            
+            if (rect.bottom > 0 && rect.top < windowHeight) {
+                // Section is in view, calculate precise progress
+                const scrollProgress = Math.max(0, Math.min(1, (windowCenter - rect.top) / sectionHeight));
+                const progress = scrollProgress * 100;
+                progressFill.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+            } else {
+                // Section is out of view
+                const progress = (currentStep / 3) * 100;
+                progressFill.style.width = `${progress}%`;
+            }
+        }
+        
+        // Update marker states
+        markers.forEach((marker, index) => {
+            if (index <= currentStep) {
+                marker.classList.add('active');
+            } else {
+                marker.classList.remove('active');
+            }
+        });
+    }
+    
+    function updateStepButtons() {
+        stepButtons.forEach((button, index) => {
+            if (index === currentStep) {
+                button.classList.add('active');
+            } else {
+                button.classList.remove('active');
+            }
+        });
+    }
+    
+    function updatePlaybackControls() {
+        if (playButton) playButton.style.display = isPlaying ? 'none' : 'flex';
+        if (pauseButton) pauseButton.style.display = isPlaying ? 'flex' : 'none';
+    }
+    
+    function updateScrollProgress() {
+        const progressDots = document.querySelectorAll('.progress-dot');
+        progressDots.forEach((dot, index) => {
+            if (index === currentStep) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+    
+    function showScene(stepIndex) {
+        // Hide all scenes first
+        const scenes = document.querySelectorAll('.workflow-scene');
+        scenes.forEach(scene => scene.classList.remove('active'));
+        
+        // Show target scene
+        const targetScene = document.getElementById(`scene${stepIndex + 1}`);
+        if (targetScene) {
+            targetScene.classList.add('active');
+            
+            // Start scene-specific animations
+            switch(stepIndex) {
+                case 0:
+                    animateChatScene();
+                    break;
+                case 1:
+                    animateExtractionScene();
+                    break;
+                case 2:
+                    animateAIScene();
+                    break;
+                case 3:
+                    animateRankingScene();
+                    break;
+            }
+        }
+    }
+    
+    function animateChatScene() {
+        const chatArea = document.querySelector('#scene1 .chat-area');
+        if (!chatArea) return;
+        
+        // Clear previous messages
+        chatArea.innerHTML = '';
+        
+        const messages = [
+            { type: 'bot', text: 'Welcome! I\'m here to help with your application process.' },
+            { type: 'user', text: 'Hi! I\'m interested in the Senior Developer position.' },
+            { type: 'bot', text: 'Great! Please upload your CV and I\'ll analyze it for you.' }
+        ];
+        
+        messages.forEach((msg, index) => {
+            setTimeout(() => {
+                const messageEl = document.createElement('div');
+                messageEl.className = `chat-message ${msg.type}`;
+                messageEl.textContent = msg.text;
+                chatArea.appendChild(messageEl);
+                chatArea.scrollTop = chatArea.scrollHeight;
+            }, index * 1000);
+        });
+        
+        // Show upload after messages
+        setTimeout(() => {
+            const uploadZone = document.querySelector('#scene1 .upload-zone');
+            if (uploadZone) {
+                uploadZone.style.opacity = '1';
+                startUploadAnimation();
+            }
+        }, 3500);
+    }
+    
+    function startUploadAnimation() {
+        const progressFill = document.querySelector('#scene1 .progress-fill');
+        if (progressFill) {
+            progressFill.style.animation = 'progressFill 2s ease-out forwards';
+        }
+    }
+    
+    function animateExtractionScene() {
+        // Animate the data transformation
+        const cvLines = document.querySelectorAll('#scene2 .cv-line');
+        const dataFields = document.querySelectorAll('#scene2 .data-field');
+        
+        // Reset and animate CV lines
+        cvLines.forEach((line, index) => {
+            line.style.animation = 'none';
+            setTimeout(() => {
+                line.style.animation = 'shimmer 1.5s ease-in-out infinite';
+            }, index * 100);
+        });
+        
+        // Animate data fields appearing
+        dataFields.forEach((field, index) => {
+            field.style.opacity = '0';
+            field.style.transform = 'translateX(-20px)';
+            setTimeout(() => {
+                field.style.transition = 'all 0.5s ease-out';
+                field.style.opacity = '1';
+                field.style.transform = 'translateX(0)';
+            }, 1000 + (index * 200));
+        });
+    }
+    
+    function animateAIScene() {
+        // Animate neural network nodes
+        const nodes = document.querySelectorAll('#scene3 .neural-node');
+        nodes.forEach((node, index) => {
+            node.style.animation = 'none';
+            setTimeout(() => {
+                node.style.animation = 'nodeActivate 3s ease-in-out infinite';
+            }, index * 300);
+        });
+        
+        // Animate metrics
+        const metrics = document.querySelectorAll('#scene3 .metric-item');
+        metrics.forEach((metric, index) => {
+            metric.style.opacity = '0';
+            metric.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                metric.style.transition = 'all 0.6s ease-out';
+                metric.style.opacity = '1';
+                metric.style.transform = 'translateY(0)';
+            }, 500 + (index * 150));
+        });
+    }
+    
+    function animateRankingScene() {
+        // Animate ranking items
+        const rankItems = document.querySelectorAll('#scene4 .rank-item');
+        rankItems.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-30px)';
+            setTimeout(() => {
+                item.style.transition = 'all 0.6s ease-out';
+                item.style.opacity = '1';
+                item.style.transform = 'translateX(0)';
+            }, index * 200);
+        });
+        
+        // Animate score bars
+        setTimeout(() => {
+            const scoreFills = document.querySelectorAll('#scene4 .score-fill');
+            scoreFills.forEach((fill, index) => {
+                setTimeout(() => {
+                    fill.style.animation = 'scoreFill 1.5s ease-out forwards';
+                }, index * 100);
+            });
+        }, 800);
+        
+        // Animate insights
+        const insights = document.querySelectorAll('#scene4 .insight-item');
+        insights.forEach((insight, index) => {
+            insight.style.opacity = '0';
+            insight.style.transform = 'translateY(10px)';
+            setTimeout(() => {
+                insight.style.transition = 'all 0.5s ease-out';
+                insight.style.opacity = '1';
+                insight.style.transform = 'translateY(0)';
+            }, 1200 + (index * 150));
+        });
+    }
+    
+    function clearSceneContent() {
+        // Reset all animations and content
+        const chatArea = document.querySelector('#scene1 .chat-area');
+        if (chatArea) chatArea.innerHTML = '';
+        
+        const uploadZone = document.querySelector('#scene1 .upload-zone');
+        if (uploadZone) uploadZone.style.opacity = '0.7';
+        
+        const progressFill = document.querySelector('#scene1 .progress-fill');
+        if (progressFill) {
+            progressFill.style.animation = 'none';
+            progressFill.style.width = '0%';
+        }
+    }
 }
 
 // Tab Switching for Customer Types
