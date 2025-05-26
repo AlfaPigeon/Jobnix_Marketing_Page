@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobnix - AI-Powered Recruitment Revolution</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-robot"></i>
+                <span>Jobnix</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#benefits" class="nav-link">Benefits</a>
+                <a href="#customers" class="nav-link">Customers</a>
+                <button class="cta-button nav-cta">Request Demo</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Stop Drowning in CVs.<br>
+                        <span class="gradient-text">Start Discovering Talent.</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Introducing Jobnix – The intelligent HR middleware that transforms your recruitment pipeline. 
+                        Our AI agent chats with candidates, standardizes their data, and uncovers the critical insights 
+                        you need to make the best hires, faster.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="cta-button primary">Request a Demo</button>
+                        <button class="cta-button secondary">
+                            <i class="fas fa-play"></i>
+                            See It In Action
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">75%</span>
+                            <span class="stat-label">Time Saved</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3x</span>
+                            <span class="stat-label">Faster Hiring</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">90%</span>
+                            <span class="stat-label">Better Matches</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-demo">
+                    <div class="chat-container">
+                        <div class="chat-header">
+                            <div class="chat-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="chat-info">
+                                <h3>Jobnix AI Assistant</h3>
+                                <span class="status">Online</span>
+                            </div>
+                        </div>
+                        <div class="chat-messages" id="chatMessages">
+                            <!-- Messages will be populated by JavaScript -->
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" placeholder="Type your response..." disabled>
+                            <button><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="pain-points">
+        <div class="container">
+            <h2 class="section-title">Is This Your Hiring Reality?</h2>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Endless CVs, Limited Time</h3>
+                    <p>HR teams bogged down manually sifting through hundreds of applications for nearly identical roles.</p>
+                </div>
+                <div class="pain-card">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <h3>Inconsistent Information</h3>
+                    <p>Candidate data scattered across countless CV formats, making comparisons nearly impossible.</p>
+                </div>
+                <div class="pain-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Losing Top Talent</h3>
+                    <p>Lengthy screening processes mean the best candidates are already off the market.</p>
+                </div>
+                <div class="pain-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Startup Scramble</h3>
+                    <p>Finding the right fit quickly is the difference between sprinting ahead and falling behind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution" id="features">
+        <div class="container">
+            <div class="solution-content">
+                <div class="solution-text">
+                    <h2 class="section-title">Meet Jobnix: Your AI-Powered Recruitment Co-Pilot</h2>
+                    <p class="solution-description">
+                        Jobnix is a revolutionary HR middleware designed to bridge the gap between your HR team and top talent. 
+                        We empower you to move beyond surface-level CV screening with an intelligent AI agent that engages 
+                        directly with your candidates.
+                    </p>
+                    <div class="solution-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>You Set the Standard</h4>
+                                <p>Define key qualifications and crucial questions for your open role.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>We Send the Link</h4>
+                                <p>HR shares a unique link with candidates, inviting them into our streamlined pipeline.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>The AI Takes Over</h4>
+                                <p>Candidates are greeted by our intelligent AI chat agent that standardizes data and uncovers insights.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="solution-visual">
+                    <div class="transform-animation">
+                        <div class="messy-cvs">
+                            <div class="cv-stack">
+                                <div class="cv-paper"></div>
+                                <div class="cv-paper"></div>
+                                <div class="cv-paper"></div>
+                                <div class="cv-paper"></div>
+                            </div>
+                            <span class="label">Messy CVs</span>
+                        </div>
+                        <div class="ai-processor">
+                            <i class="fas fa-robot"></i>
+                            <span>AI Agent</span>
+                        </div>
+                        <div class="organized-data">
+                            <div class="data-row"></div>
+                            <div class="data-row"></div>
+                            <div class="data-row"></div>
+                            <div class="data-row"></div>
+                            <span class="label">Organized Data</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2 class="section-title">Why HR Professionals Choose Jobnix</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Slash Screening Time</h3>
+                    <p>Free your HR team from manual CV review. Our AI handles the initial heavy lifting, presenting you with pre-vetted, consistently formatted candidate profiles.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Uniformity is Power</h3>
+                    <p>All candidate data is structured uniformly around your specific job qualifications, making evaluations fair, fast, and incredibly efficient.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Deeper Insights</h3>
+                    <p>Our AI agent gathers intelligence by asking targeted questions, giving you a richer understanding of each candidate's suitability.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Smarter Over Time</h3>
+                    <p>Data from previous interactions continuously refines the AI's capabilities. Your hiring process gets smarter with every candidate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Types Section -->
+    <section class="customers" id="customers">
+        <div class="container">
+            <h2 class="section-title">Designed for Your Needs</h2>
+            <div class="customer-tabs">
+                <button class="tab-button active" data-tab="volume">High-Volume Recruiters</button>
+                <button class="tab-button" data-tab="professional">Professional HR Teams</button>
+                <button class="tab-button" data-tab="discretion">Discrete Roles</button>
+                <button class="tab-button" data-tab="startups">Talent-Driven Startups</button>
+            </div>
+            <div class="tab-content">
+                <div class="tab-panel active" id="volume">
+                    <div class="customer-content">
+                        <div class="customer-text">
+                            <h3>For High-Volume Recruiters</h3>
+                            <p>Imagine effortlessly processing thousands of applicants for similar roles, with each candidate's core qualifications clearly presented and ranked. Jobnix turns volume into a manageable advantage, not a bottleneck.</p>
+                            <ul>
+                                <li>Process 1000+ applications efficiently</li>
+                                <li>Automated qualification ranking</li>
+                                <li>Consistent data formatting</li>
+                                <li>Reduced manual screening time</li>
+                            </ul>
+                        </div>
+                        <div class="customer-visual">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-panel" id="professional">
+                    <div class="customer-content">
+                        <div class="customer-text">
+                            <h3>For Professional HR Teams</h3>
+                            <p>Equip your experts with a powerful tool that automates the tedious, standardizes the chaotic, and delivers the deep insights needed for strategic talent acquisition.</p>
+                            <ul>
+                                <li>Focus on strategic decision-making</li>
+                                <li>Automated data standardization</li>
+                                <li>Enhanced candidate insights</li>
+                                <li>Professional workflow integration</li>
+                            </ul>
+                        </div>
+                        <div class="customer-visual">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-panel" id="discretion">
+                    <div class="customer-content">
+                        <div class="customer-text">
+                            <h3>For Roles Requiring Discretion</h3>
+                            <p>Need to ask sensitive or specific questions that aren't suitable for a public job posting? Our AI interviewer gathers crucial information privately and professionally.</p>
+                            <ul>
+                                <li>Private qualification screening</li>
+                                <li>Sensitive information handling</li>
+                                <li>Professional discretion</li>
+                                <li>Complete candidate picture</li>
+                            </ul>
+                        </div>
+                        <div class="customer-visual">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-panel" id="startups">
+                    <div class="customer-content">
+                        <div class="customer-text">
+                            <h3>For Talent-Driven Startups</h3>
+                            <p>In a startup, every hire is critical. Jobnix helps you quickly identify candidates with the precise skills and attributes you need to fuel growth.</p>
+                            <ul>
+                                <li>Rapid talent identification</li>
+                                <li>Agile hiring processes</li>
+                                <li>Critical skill assessment</li>
+                                <li>Growth-focused recruitment</li>
+                            </ul>
+                        </div>
+                        <div class="customer-visual">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust">
+        <div class="container">
+            <h2 class="section-title">Join Forward-Thinking Companies Transforming Their Hiring</h2>
+            <div class="trust-logos">
+                <div class="logo-placeholder">Company A</div>
+                <div class="logo-placeholder">Company B</div>
+                <div class="logo-placeholder">Company C</div>
+                <div class="logo-placeholder">Company D</div>
+            </div>
+            <div class="testimonial">
+                <blockquote>
+                    "Since implementing Jobnix, our time-to-hire has decreased by 65%, and the quality of candidates reaching the final interview stage has significantly improved."
+                </blockquote>
+                <cite>— Sarah Johnson, VP of Talent Acquisition, TechCorp</cite>
+            </div>
+            <div class="mission">
+                <p>At Jobnix, we're passionate about connecting great companies with exceptional talent through intelligent technology. We believe hiring should be smarter, faster, and more insightful.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Revolutionize Your Hiring?</h2>
+                <p class="cta-subtitle">
+                    See firsthand how Jobnix can transform your recruitment process. Get a personalized demo and discover how our AI-powered solution can save you time, improve data quality, and help you make more informed hiring decisions.
+                </p>
+                <div class="cta-buttons">
+                    <button class="cta-button primary large">Request Your Free Demo Today!</button>
+                    <button class="cta-button secondary large">Learn More About Our Features</button>
+                </div>
+                <div class="cta-features">
+                    <div class="feature">
+                        <i class="fas fa-check"></i>
+                        <span>Free 30-day trial</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check"></i>
+                        <span>No setup fees</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check"></i>
+                        <span>24/7 support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-robot"></i>
+                    <span>Jobnix</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jobnix. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
