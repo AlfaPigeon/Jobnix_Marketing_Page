@@ -230,7 +230,7 @@ function initWorkflowAnimation() {
     const pauseButton = document.getElementById('pauseWorkflow');
     const resetButton = document.getElementById('resetWorkflow');
     
-    let currentStep = 0;
+    let currentStep = -1;
     let isPlaying = false;
     let isScrollControlled = true;
     let animationTimeouts = [];
@@ -277,19 +277,20 @@ function initWorkflowAnimation() {
         // We want each step to trigger when it reaches the middle of the screen
         const sectionTop = rect.top;
         const scrollProgress = Math.max(0, Math.min(1, (windowCenter - sectionTop) / sectionHeight));
-        
-        // Divide the section into 4 equal parts for 4 steps
-        // Each step will be active for 25% of the scroll range
+          // Divide the section into 5 equal parts for 5 steps
+        // Each step will be active for 20% of the scroll range
         // Add some overlap to ensure smooth transitions
         let newStep;
-        if (scrollProgress <= 0.35) {
+        if (scrollProgress <= 0.22) {
             newStep = 0;
-        } else if (scrollProgress <= 0.45) {
+        } else if (scrollProgress <= 0.42) {
             newStep = 1;
-        } else if (scrollProgress <= 0.55) {
+        } else if (scrollProgress <= 0.62) {
             newStep = 2;
-        } else {
+        } else if (scrollProgress <= 0.82) {
             newStep = 3;
+        } else {
+            newStep = 4;
         }
         
         // Only update if step has changed
@@ -342,18 +343,16 @@ function initWorkflowAnimation() {
         
         isPlaying = true;
         updatePlaybackControls();
-        
-        // Start from current step or beginning
-        if (currentStep >= 4) {
+          // Start from current step or beginning
+        if (currentStep >= 5) {
             currentStep = 0;
             resetWorkflowAnimation();
         }
         
         playStep(currentStep);
     }
-    
-    function playStep(stepIndex) {
-        if (stepIndex >= 4) {
+      function playStep(stepIndex) {
+        if (stepIndex >= 5) {
             isPlaying = false;
             updatePlaybackControls();
             isScrollControlled = true; // Return to scroll control when done
@@ -395,11 +394,10 @@ function initWorkflowAnimation() {
         updateTimelineProgress();
         updateStepButtons();
         updateScrollProgress();
-        
-        // Hide all scenes
-        const scenes = document.querySelectorAll('.workflow-scene');
-        scenes.forEach(scene => {
-            scene.classList.remove('active');
+          // Hide all workflow steps
+        const workflowSteps = document.querySelectorAll('.workflow-step');
+        workflowSteps.forEach(step => {
+            step.classList.remove('active');
         });
         
         // Clear dynamic content
@@ -425,10 +423,9 @@ function initWorkflowAnimation() {
                 // Section is in view, calculate precise progress
                 const scrollProgress = Math.max(0, Math.min(1, (windowCenter - rect.top) / sectionHeight));
                 const progress = scrollProgress * 100;
-                progressFill.style.width = `${Math.min(100, Math.max(0, progress))}%`;
-            } else {
+                progressFill.style.width = `${Math.min(100, Math.max(0, progress))}%`;            } else {
                 // Section is out of view
-                const progress = (currentStep / 3) * 100;
+                const progress = (currentStep / 4) * 100;
                 progressFill.style.width = `${progress}%`;
             }
         }
@@ -468,37 +465,38 @@ function initWorkflowAnimation() {
             }
         });
     }
-    
-    function showScene(stepIndex) {
-        // Hide all scenes first
-        const scenes = document.querySelectorAll('.workflow-scene');
-        scenes.forEach(scene => scene.classList.remove('active'));
+      function showScene(stepIndex) {
+        // Hide all workflow steps first
+        const workflowSteps = document.querySelectorAll('.workflow-step');
+        workflowSteps.forEach(step => step.classList.remove('active'));
         
-        // Show target scene
-        const targetScene = document.getElementById(`scene${stepIndex + 1}`);
-        if (targetScene) {
-            targetScene.classList.add('active');
+        // Show target step
+        const targetStep = document.getElementById(`step${stepIndex + 1}`);
+        if (targetStep) {
+            targetStep.classList.add('active');
             
-            // Start scene-specific animations
+            // Start step-specific animations
             switch(stepIndex) {
                 case 0:
-                    animateChatScene();
+                    animateEngagementStep();
                     break;
                 case 1:
-                    animateExtractionScene();
+                    animateExtractionStep();
                     break;
                 case 2:
-                    animateAIScene();
+                    animateAnalysisStep();
                     break;
                 case 3:
-                    animateRankingScene();
+                    animateRankingStep();
+                    break;
+                case 4:
+                    animateResultsStep();
                     break;
             }
         }
     }
-    
-    function animateChatScene() {
-        const chatArea = document.querySelector('#scene1 .chat-area');
+      function animateEngagementStep() {
+        const chatArea = document.querySelector('#step1 .chat-area');
         if (!chatArea) return;
         
         // Clear previous messages
@@ -522,25 +520,25 @@ function initWorkflowAnimation() {
         
         // Show upload after messages
         setTimeout(() => {
-            const uploadZone = document.querySelector('#scene1 .upload-zone');
+            const uploadZone = document.querySelector('#step1 .upload-zone');
             if (uploadZone) {
-                uploadZone.style.opacity = '1';
-                startUploadAnimation();
+                uploadZone.style.display = 'block';
+                startUploadAnimation('#step1');
             }
         }, 3500);
     }
     
-    function startUploadAnimation() {
-        const progressFill = document.querySelector('#scene1 .progress-fill');
+    function startUploadAnimation(stepSelector) {
+        const progressFill = document.querySelector(`${stepSelector} .progress-fill`);
         if (progressFill) {
-            progressFill.style.animation = 'progressFill 2s ease-out forwards';
+            progressFill.style.animation = 'progressFillMini 2s ease-out forwards';
         }
     }
     
-    function animateExtractionScene() {
+    function animateExtractionStep() {
         // Animate the data transformation
-        const cvLines = document.querySelectorAll('#scene2 .cv-line');
-        const dataFields = document.querySelectorAll('#scene2 .data-field');
+        const cvLines = document.querySelectorAll('#step2 .cv-line');
+        const dataFields = document.querySelectorAll('#step2 .data-field');
         
         // Reset and animate CV lines
         cvLines.forEach((line, index) => {
@@ -560,11 +558,18 @@ function initWorkflowAnimation() {
                 field.style.transform = 'translateX(0)';
             }, 1000 + (index * 200));
         });
+        
+        // Animate processing indicator
+        const processingDots = document.querySelectorAll('#step2 .processing-dots span');
+        processingDots.forEach((dot, index) => {
+            dot.style.animation = `processingDot 1.5s ease-in-out infinite`;
+            dot.style.animationDelay = `${index * 0.3}s`;
+        });
     }
     
-    function animateAIScene() {
+    function animateAnalysisStep() {
         // Animate neural network nodes
-        const nodes = document.querySelectorAll('#scene3 .neural-node');
+        const nodes = document.querySelectorAll('#step3 .neural-node');
         nodes.forEach((node, index) => {
             node.style.animation = 'none';
             setTimeout(() => {
@@ -572,44 +577,60 @@ function initWorkflowAnimation() {
             }, index * 300);
         });
         
+        // Animate brain core
+        const brainCore = document.querySelector('#step3 .brain-core');
+        if (brainCore) {
+            brainCore.style.animation = 'brainPulse 2s ease-in-out infinite';
+        }
+        
         // Animate metrics
-        const metrics = document.querySelectorAll('#scene3 .metric-item');
+        const metrics = document.querySelectorAll('#step3 .metric-item');
         metrics.forEach((metric, index) => {
+            const metricFill = metric.querySelector('.metric-fill');
             metric.style.opacity = '0';
             metric.style.transform = 'translateY(20px)';
             setTimeout(() => {
                 metric.style.transition = 'all 0.6s ease-out';
                 metric.style.opacity = '1';
                 metric.style.transform = 'translateY(0)';
+                
+                // Animate the progress bar
+                if (metricFill) {
+                    const percent = metricFill.getAttribute('data-percent');
+                    setTimeout(() => {
+                        metricFill.style.transform = `scaleX(${percent / 100})`;
+                    }, 300);
+                }
             }, 500 + (index * 150));
         });
     }
     
-    function animateRankingScene() {
+    function animateRankingStep() {
         // Animate ranking items
-        const rankItems = document.querySelectorAll('#scene4 .rank-item');
+        const rankItems = document.querySelectorAll('#step4 .rank-item');
         rankItems.forEach((item, index) => {
             item.style.opacity = '0';
-            item.style.transform = 'translateX(-30px)';
+            item.style.transform = 'translateY(30px)';
             setTimeout(() => {
                 item.style.transition = 'all 0.6s ease-out';
                 item.style.opacity = '1';
-                item.style.transform = 'translateX(0)';
+                item.style.transform = 'translateY(0)';
             }, index * 200);
         });
         
         // Animate score bars
         setTimeout(() => {
-            const scoreFills = document.querySelectorAll('#scene4 .score-fill');
+            const scoreFills = document.querySelectorAll('#step4 .score-fill');
             scoreFills.forEach((fill, index) => {
+                const score = fill.getAttribute('data-score');
                 setTimeout(() => {
-                    fill.style.animation = 'scoreFill 1.5s ease-out forwards';
+                    fill.style.transform = `scaleX(${score / 100})`;
                 }, index * 100);
             });
         }, 800);
         
         // Animate insights
-        const insights = document.querySelectorAll('#scene4 .insight-item');
+        const insights = document.querySelectorAll('#step4 .insight-item');
         insights.forEach((insight, index) => {
             insight.style.opacity = '0';
             insight.style.transform = 'translateY(10px)';
@@ -621,19 +642,69 @@ function initWorkflowAnimation() {
         });
     }
     
-    function clearSceneContent() {
+    function animateResultsStep() {
+        // Animate success icon
+        const successIcon = document.querySelector('#step5 .success-icon');
+        if (successIcon) {
+            successIcon.style.animation = 'successPop 1s ease-out forwards';
+        }
+        
+        // Animate summary stats
+        const summaryStats = document.querySelectorAll('#step5 .summary-stats .stat-item');
+        summaryStats.forEach((stat, index) => {
+            stat.style.opacity = '0';
+            stat.style.transform = 'translateY(30px) scale(0.9)';
+            setTimeout(() => {
+                stat.style.transition = 'all 0.8s ease-out';
+                stat.style.opacity = '1';
+                stat.style.transform = 'translateY(0) scale(1)';
+            }, 300 + (index * 200));
+        });
+        
+        // Animate impact metrics
+        const impactItems = document.querySelectorAll('#step5 .impact-item');
+        impactItems.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                item.style.transition = 'all 0.6s ease-out';
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            }, 1200 + (index * 150));
+        });
+        
+        // Animate CTA button
+        const ctaButton = document.querySelector('#step5 .cta-button');
+        if (ctaButton) {
+            ctaButton.style.opacity = '0';
+            ctaButton.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                ctaButton.style.transition = 'all 0.8s ease-out';
+                ctaButton.style.opacity = '1';
+                ctaButton.style.transform = 'translateY(0)';
+                ctaButton.style.animation = 'ctaPulse 2s ease-in-out infinite';
+            }, 2000);
+        }
+    }
+      function clearSceneContent() {
         // Reset all animations and content
-        const chatArea = document.querySelector('#scene1 .chat-area');
+        const chatArea = document.querySelector('#step1 .chat-area');
         if (chatArea) chatArea.innerHTML = '';
         
-        const uploadZone = document.querySelector('#scene1 .upload-zone');
-        if (uploadZone) uploadZone.style.opacity = '0.7';
+        const uploadZone = document.querySelector('#step1 .upload-zone');
+        if (uploadZone) uploadZone.style.display = 'none';
         
-        const progressFill = document.querySelector('#scene1 .progress-fill');
+        const progressFill = document.querySelector('#step1 .progress-fill');
         if (progressFill) {
             progressFill.style.animation = 'none';
             progressFill.style.width = '0%';
         }
+        
+        // Reset all workflow steps
+        const workflowSteps = document.querySelectorAll('.workflow-step');
+        workflowSteps.forEach(step => {
+            step.classList.remove('active');
+        });
     }
 }
 
