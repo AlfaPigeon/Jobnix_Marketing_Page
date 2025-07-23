@@ -15,7 +15,7 @@ function initChatSimulation() {
     const conversation = [
         {
             type: 'bot',
-            message: "Hi! I'm the Jobnix AI Assistant. I'm here to help streamline your application process. What's your name?",
+            message: "Hi! I'm the EmployCase AI Assistant. I'm here to help streamline your application process. What's your name?",
             delay: 1000
         },
         {
@@ -831,41 +831,8 @@ function showDemoModal() {
     `;
     
     modal.innerHTML = `
-        <div style="margin-bottom: 20px;">
-            <i class="fas fa-rocket" style="font-size: 3rem; color: #2563eb; margin-bottom: 20px;"></i>
-            <h2 style="margin-bottom: 10px; color: #1e293b;">Request Your Demo</h2>
-            <p style="color: #64748b; margin-bottom: 30px;">See how Jobnix can transform your hiring process. Fill out the form below and we'll get back to you within 24 hours.</p>
-        </div>
-        <form style="text-align: left;">
-            <div style="margin-bottom: 20px;">
-                <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #374151;">Company Name</label>
-                <input type="text" placeholder="Your Company" style="width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px;">
-            </div>
-            <div style="margin-bottom: 20px;">
-                <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #374151;">Your Name</label>
-                <input type="text" placeholder="John Doe" style="width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px;">
-            </div>
-            <div style="margin-bottom: 20px;">
-                <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #374151;">Email</label>
-                <input type="email" placeholder="john@company.com" style="width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px;">
-            </div>
-            <div style="margin-bottom: 30px;">
-                <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #374151;">Company Size</label>
-                <select style="width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px;">
-                    <option>1-10 employees</option>
-                    <option>11-50 employees</option>
-                    <option>51-200 employees</option>
-                    <option>201-1000 employees</option>
-                    <option>1000+ employees</option>
-                </select>
-            </div>
-            <div style="display: flex; gap: 10px;">
-                <button type="submit" style="flex: 1; padding: 12px 24px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Request Demo</button>
-                <button type="button" class="close-modal" style="padding: 12px 24px; background: #f3f4f6; color: #374151; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Cancel</button>
-            </div>
-        </form>
+    <iframe class="airtable-embed" src="https://airtable.com/embed/appwNHbSZ3J4G9oE0/pagtkK4djKlZfeKLL/form" frameborder="0" onmousewheel="" width="100%" height="700" style="background: transparent; border: 1px solid #ccc;"></iframe>
     `;
-    
     overlay.appendChild(modal);
     document.body.appendChild(overlay);
     
@@ -908,7 +875,7 @@ function showDemoModal() {
                 <div style="text-align: center;">
                     <i class="fas fa-check-circle" style="font-size: 4rem; color: #10b981; margin-bottom: 20px;"></i>
                     <h2 style="margin-bottom: 10px; color: #1e293b;">Demo Requested!</h2>
-                    <p style="color: #64748b; margin-bottom: 30px;">Thank you for your interest in Jobnix. Our team will contact you within 24 hours to schedule your personalized demo.</p>
+                    <p style="color: #64748b; margin-bottom: 30px;">Thank you for your interest in EmployCase. Our team will contact you within 24 hours to schedule your personalized demo.</p>
                     <button class="close-modal" style="padding: 12px 24px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Close</button>
                 </div>
             `;
