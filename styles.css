@@ -1341,6 +1341,20 @@ body {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .chat-container {
+        max-width: 450px;
+    }
+    
     .workflow-step {
         min-height: 100vh;
         margin-bottom: 30vh;
@@ -3716,5 +3730,108 @@ body {
     }
     50% {
         transform: scale(1.05);
+    }
+}
+
+/* Additional Mobile Responsive Styles for Hero Section */
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px 0 60px;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+        line-height: 1.1;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    
+    .cta-button {
+        width: 100%;
+        max-width: 280px;
+        padding: 14px 20px;
+        justify-content: center;
+    }
+    
+    .chat-container {
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    .chat-messages {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 90px 0 50px;
+    }
+    
+    .hero-content {
+        gap: 25px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    .hero-buttons {
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+    
+    .cta-button {
+        max-width: 250px;
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+    
+    .chat-container {
+        border-radius: 12px;
+    }
+    
+    .chat-messages {
+        height: 220px;
+        padding: 15px;
+    }
+    
+    .chat-input {
+        padding: 15px;
+    }
+    
+    .chat-input input {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+    
+    .dropbox-container {
+        padding: 15px;
+    }
+    
+    .dropbox {
+        padding: 20px 15px;
     }
 }
