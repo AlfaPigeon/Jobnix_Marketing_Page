@@ -78,6 +78,120 @@ body {
     margin-left: 10px;
 }
 
+/* Mobile Navigation Toggle */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+    .nav-container {
+        position: relative;
+    }
+    
+    .nav-toggle {
+        display: flex;
+        z-index: 1001;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 50px;
+        gap: 30px;
+        transition: left 0.3s ease;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-link {
+        font-size: 18px;
+        font-weight: 600;
+        padding: 15px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-cta {
+        margin: 20px 0;
+        padding: 15px 30px;
+        font-size: 16px;
+        margin-left: 0;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .nav-logo {
+        font-size: 20px;
+    }
+    
+    .nav-logo i {
+        font-size: 24px;
+    }
+    
+    .nav-toggle span {
+        width: 20px;
+        height: 2px;
+    }
+    
+    .nav-menu {
+        padding-top: 30px;
+        gap: 20px;
+    }
+    
+    .nav-link {
+        font-size: 16px;
+        padding: 12px 0;
+    }
+    
+    .nav-cta {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+}
+
 /* Buttons */
 .cta-button {
     padding: 12px 24px;
@@ -1339,100 +1453,6 @@ body {
     }
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
-    }
-    
-    .hero-title {
-        font-size: 2.8rem;
-    }
-    
-    .chat-container {
-        max-width: 450px;
-    }
-    
-    .workflow-step {
-        min-height: 100vh;
-        margin-bottom: 30vh;
-    }
-    
-    .step-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
-        padding: 60px 40px;
-    }
-    
-    .step-content.reverse {
-        direction: ltr;
-    }
-    
-    .summary-stats {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .impact-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .accuracy-stats {
-        grid-template-columns: 1fr;
-    }
-    
-    .control-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .workflow-animation {
-        padding: 100px 0 150px 0;
-        min-height: 300vh;
-    }
-    
-    .workflow-header .section-title {
-        font-size: 2.5rem;
-    }
-    
-    .workflow-subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .step-content {
-        padding: 40px 20px;
-    }
-    
-    .step-info h3 {
-        font-size: 2rem;
-    }
-    
-    .step-number {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-    }
-    
-    .impact-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .scroll-progress-indicator {
-        right: 15px;
-        padding: 10px 6px;
-    }
-    
-    .progress-dot {
-        width: 12px;
-        height: 12px;
-    }
-}
-
 /* Workflow Stage */
 .workflow-stage {
     position: relative;
@@ -2337,86 +2357,6 @@ body {
 
 .progress-dot.active::after {
     opacity: 1;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .workflow-step {
-        min-height: 100vh;
-        margin-bottom: 30vh;
-    }
-    
-    .step-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
-        padding: 60px 40px;
-    }
-    
-    .step-content.reverse {
-        direction: ltr;
-    }
-    
-    .summary-stats {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .impact-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .accuracy-stats {
-        grid-template-columns: 1fr;
-    }
-    
-    .control-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .workflow-animation {
-        padding: 100px 0 150px 0;
-        min-height: 300vh;
-    }
-    
-    .workflow-header .section-title {
-        font-size: 2.5rem;
-    }
-    
-    .workflow-subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .step-content {
-        padding: 40px 20px;
-    }
-    
-    .step-info h3 {
-        font-size: 2rem;
-    }
-    
-    .step-number {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-    }
-    
-    .impact-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .scroll-progress-indicator {
-        right: 15px;
-        padding: 10px 6px;
-    }
-    
-    .progress-dot {
-        width: 12px;
-        height: 12px;
-    }
 }
 
 /* Workflow Stage */
@@ -3733,8 +3673,76 @@ body {
     }
 }
 
-/* Additional Mobile Responsive Styles for Hero Section */
+/* Comprehensive Mobile Responsive Styles */
+@media (max-width: 1024px) {
+    /* Workflow Animation Adjustments */
+    .workflow-steps-container {
+        padding: 0 20px;
+    }
+    
+    .workflow-step {
+        margin-bottom: 80px;
+    }
+    
+    .step-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .step-content.reverse {
+        grid-template-columns: 1fr;
+    }
+    
+    .step-content.center {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    
+    .step-visual {
+        order: -1;
+    }
+    
+    .step-content.reverse .step-visual {
+        order: -1;
+    }
+    
+    .step-info {
+        text-align: center;
+    }
+    
+    /* Solution Section Adjustments */
+    .solution-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .solution-visual {
+        order: -1;
+    }
+}
+
 @media (max-width: 768px) {
+    /* General Container Adjustments */
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Section Padding Adjustments */
+    .pain-points,
+    .solution,
+    .benefits,
+    .customers,
+    .workflow-animation {
+        padding: 60px 0;
+    }
+    
+    .cta-section {
+        padding: 50px 0;
+    }
+    
+    /* Hero Section */
     .hero {
         padding: 100px 0 60px;
     }
@@ -3777,9 +3785,270 @@ body {
     .chat-messages {
         height: 250px;
     }
+    
+    /* Pain Points Section */
+    .pain-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 30px;
+    }
+    
+    .pain-card {
+        padding: 30px 20px;
+    }
+    
+    .pain-card i {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .pain-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+    
+    /* Solution Section */
+    .solution-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .solution-visual {
+        order: -1;
+    }
+    
+    .solution-steps {
+        margin-top: 25px;
+    }
+    
+    .step {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    
+    .step-number {
+        margin-bottom: 15px;
+        margin-right: 0;
+    }
+    
+    .step-content h4 {
+        margin-bottom: 8px;
+    }
+    
+    /* Benefits Section */
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .benefit-card {
+        padding: 30px 20px;
+    }
+    
+    .benefit-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 15px;
+    }
+    
+    .benefit-icon i {
+        font-size: 1.8rem;
+    }
+    
+    .benefit-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+    
+    /* Workflow Animation Section */
+    .workflow-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .workflow-intro {
+        margin-top: 20px;
+    }
+    
+    .scroll-progress-indicator {
+        display: none; /* Hide on mobile for simplicity */
+    }
+    
+    .workflow-step {
+        margin-bottom: 60px;
+        padding: 30px 15px;
+    }
+    
+    .step-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .step-visual {
+        order: -1;
+    }
+    
+    .step-info {
+        text-align: center;
+    }
+    
+    .step-number {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .feature-highlights {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .highlight-item {
+        justify-content: center;
+    }
+    
+    .accuracy-stats,
+    .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .ranking-benefits ul,
+    .analysis-breakdown ul {
+        text-align: left;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    /* Customer Types Section */
+    .customer-tabs {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+    
+    .tab-button {
+        width: 100%;
+        max-width: 250px;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .customer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+    
+    .customer-visual {
+        order: -1;
+    }
+    
+    .customer-visual i {
+        font-size: 4rem;
+    }
+    
+    /* CTA Section */
+    .cta-content {
+        text-align: center;
+        padding: 0 15px;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .cta-subtitle {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    
+    .cta-buttons {
+        justify-content: center;
+    }
+    
+    .cta-button.large {
+        width: 100%;
+        max-width: 300px;
+        padding: 16px 20px;
+        font-size: 16px;
+    }
+    
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
+    /* Extra Small Mobile Devices */
+    .container {
+        padding: 0 10px;
+    }
+    
+    /* Navigation */
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .nav-logo {
+        font-size: 20px;
+    }
+    
+    .nav-logo i {
+        font-size: 24px;
+    }
+    
+    .nav-toggle span {
+        width: 20px;
+        height: 2px;
+    }
+    
+    .nav-menu {
+        padding-top: 30px;
+        gap: 20px;
+    }
+    
+    .nav-link {
+        font-size: 16px;
+        padding: 12px 0;
+    }
+    
+    .nav-cta {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+    
+    /* Section Padding */
+    .pain-points,
+    .solution,
+    .benefits,
+    .customers,
+    .workflow-animation {
+        padding: 40px 0;
+    }
+    
+    .cta-section {
+        padding: 35px 0;
+    }
+    
+    /* Hero Section */
     .hero {
         padding: 90px 0 50px;
     }
@@ -3833,5 +4102,281 @@ body {
     
     .dropbox {
         padding: 20px 15px;
+    }
+    
+    /* Pain Points Section */
+    .pain-grid {
+        gap: 20px;
+        margin-top: 25px;
+    }
+    
+    .pain-card {
+        padding: 25px 15px;
+    }
+    
+    .pain-card i {
+        font-size: 2.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .pain-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    .pain-card p {
+        font-size: 0.9rem;
+    }
+    
+    /* Solution Section */
+    .solution-content {
+        gap: 20px;
+    }
+    
+    .solution-steps {
+        margin-top: 20px;
+    }
+    
+    .step {
+        margin-bottom: 20px;
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .step-content h4 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+    
+    .step-content p {
+        font-size: 0.9rem;
+    }
+    
+    /* Benefits Section */
+    .benefits-grid {
+        gap: 20px;
+    }
+    
+    .benefit-card {
+        padding: 25px 15px;
+    }
+    
+    .benefit-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 12px;
+    }
+    
+    .benefit-icon i {
+        font-size: 1.5rem;
+    }
+    
+    .benefit-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    .benefit-card p {
+        font-size: 0.9rem;
+    }
+    
+    /* Workflow Animation Section */
+    .workflow-step {
+        margin-bottom: 40px;
+        padding: 25px 10px;
+    }
+    
+    .step-number {
+        font-size: 2rem;
+        margin-bottom: 12px;
+    }
+    
+    .step-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+    
+    .step-info p {
+        font-size: 0.9rem;
+    }
+    
+    .feature-highlights {
+        gap: 12px;
+        margin-top: 15px;
+    }
+    
+    .highlight-item {
+        font-size: 0.85rem;
+    }
+    
+    .accuracy-stats,
+    .impact-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .stat-item {
+        padding: 15px;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .impact-item .impact-value {
+        font-size: 1.8rem;
+    }
+    
+    /* Demo Windows and Visuals */
+    .demo-window,
+    .interaction-demo,
+    .extraction-demo,
+    .analysis-demo,
+    .ranking-demo {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .window-title {
+        font-size: 0.85rem;
+    }
+    
+    .chat-area {
+        height: 180px;
+        padding: 10px;
+    }
+    
+    .data-transform {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .transform-arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+    
+    .leaderboard {
+        padding: 15px;
+    }
+    
+    .rank-item {
+        padding: 12px;
+    }
+    
+    .rank-name {
+        font-size: 0.9rem;
+    }
+    
+    .score-text {
+        font-size: 0.85rem;
+    }
+    
+    /* Results Summary */
+    .results-summary {
+        padding: 25px 15px;
+    }
+    
+    .summary-stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .stat-item.large {
+        padding: 20px 15px;
+    }
+    
+    .stat-item.large .stat-number {
+        font-size: 2rem;
+    }
+    
+    /* Customer Types Section */
+    .tab-button {
+        padding: 8px 16px;
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+    
+    .customer-content {
+        gap: 20px;
+    }
+    
+    .customer-visual i {
+        font-size: 3rem;
+    }
+    
+    .customer-text h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+    
+    .customer-text p {
+        font-size: 0.9rem;
+    }
+    
+    .customer-text ul li {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+    
+    /* CTA Section */
+    .cta-title {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+    
+    .cta-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    
+    .cta-button.large {
+        max-width: 280px;
+        padding: 14px 18px;
+        font-size: 14px;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 30px 0 20px;
+    }
+    
+    .footer-content {
+        gap: 20px;
+    }
+    
+    .footer-logo {
+        font-size: 20px;
+    }
+    
+    .footer-logo i {
+        font-size: 22px;
+    }
+    
+    .footer-links {
+        gap: 12px;
+    }
+    
+    .footer-links a {
+        font-size: 14px;
+    }
+    
+    .footer-social a {
+        font-size: 1.2rem;
+        padding: 8px;
+    }
+    
+    .footer-bottom {
+        margin-top: 20px;
+        padding-top: 15px;
+    }
+    
+    .footer-bottom p {
+        font-size: 12px;
     }
 }

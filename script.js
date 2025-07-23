@@ -1,5 +1,6 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {    // Initialize all functionality
+    initMobileNavigation();
     initChatSimulation();
     initWorkflowAnimation();
     initTabSwitching();
@@ -7,6 +8,53 @@ document.addEventListener('DOMContentLoaded', function() {    // Initialize all 
     initScrollAnimations();
     initCTAButtons();
 });
+
+// Mobile Navigation
+function initMobileNavigation() {
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    // Toggle mobile menu
+    navToggle.addEventListener('click', function() {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        
+        // Prevent body scroll when menu is open
+        if (navMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Close menu when clicking on nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Close menu on window resize if screen becomes larger
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}
 
 // Chat Simulation
 function initChatSimulation() {
