@@ -654,40 +654,47 @@ function initWorkflowAnimation() {
     }
     
     function animateRankingStep() {
-        // Animate ranking items
-        const rankItems = document.querySelectorAll('#step4 .rank-item');
-        rankItems.forEach((item, index) => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(30px)';
+        // Animate kanban columns
+        const kanbanColumns = document.querySelectorAll('#step4 .kanban-column');
+        kanbanColumns.forEach((column, index) => {
+            column.style.opacity = '0';
+            column.style.transform = 'translateY(20px)';
             setTimeout(() => {
-                item.style.transition = 'all 0.6s ease-out';
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
-            }, index * 200);
+                column.style.transition = 'all 0.6s ease-out';
+                column.style.opacity = '1';
+                column.style.transform = 'translateY(0)';
+            }, index * 150);
         });
         
-        // Animate score bars
+        // Animate candidate cards
         setTimeout(() => {
-            const scoreFills = document.querySelectorAll('#step4 .score-fill');
-            scoreFills.forEach((fill, index) => {
-                const score = fill.getAttribute('data-score');
+            const candidateCards = document.querySelectorAll('#step4 .candidate-card');
+            candidateCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.8)';
                 setTimeout(() => {
-                    fill.style.transform = `scaleX(${score / 100})`;
+                    card.style.transition = 'all 0.4s ease-out';
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
                 }, index * 100);
             });
-        }, 800);
+        }, 600);
         
-        // Animate insights
-        const insights = document.querySelectorAll('#step4 .insight-item');
-        insights.forEach((insight, index) => {
-            insight.style.opacity = '0';
-            insight.style.transform = 'translateY(10px)';
-            setTimeout(() => {
-                insight.style.transition = 'all 0.5s ease-out';
-                insight.style.opacity = '1';
-                insight.style.transform = 'translateY(0)';
-            }, 1200 + (index * 150));
-        });
+        // Add subtle hover effects
+        setTimeout(() => {
+            const cards = document.querySelectorAll('#step4 .candidate-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05)';
+                    this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                    this.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+                });
+            });
+        }, 1000);
     }
     
     function animateResultsStep() {

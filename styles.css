@@ -2151,6 +2151,216 @@ body {
     font-size: 1rem;
 }
 
+/* Kanban Board Demo */
+.kanban-demo {
+    background: linear-gradient(135deg, #f8fafc, #ffffff);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    color: #333;
+    margin: 20px 0;
+    max-width: 650px;
+    border: 1px solid #e2e8f0;
+}
+
+.kanban-header {
+    margin-bottom: 25px;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.kanban-header h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.kanban-header i {
+    color: #3b82f6;
+    font-size: 1.1rem;
+}
+
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.kanban-column {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 12px;
+    border: 2px solid #e5e7eb;
+    min-height: 160px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: columnSlide 0.6s ease-out forwards;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.kanban-column:nth-child(1) { animation-delay: 0.1s; }
+.kanban-column:nth-child(2) { animation-delay: 0.2s; }
+.kanban-column:nth-child(3) { animation-delay: 0.3s; }
+.kanban-column:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes columnSlide {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.kanban-column[data-stage="new"] {
+    border-color: #3b82f6;
+    border-top: 4px solid #3b82f6;
+}
+
+.kanban-column[data-stage="screening"] {
+    border-color: #f59e0b;
+    border-top: 4px solid #f59e0b;
+}
+
+.kanban-column[data-stage="interview"] {
+    border-color: #10b981;
+    border-top: 4px solid #10b981;
+}
+
+.kanban-column[data-stage="hired"] {
+    border-color: #8b5cf6;
+    border-top: 4px solid #8b5cf6;
+}
+
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.column-count {
+    background: #3b82f6;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    min-width: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.kanban-column[data-stage="screening"] .column-count {
+    background: #f59e0b;
+    box-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);
+}
+
+.kanban-column[data-stage="interview"] .column-count {
+    background: #10b981;
+    box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+}
+
+.kanban-column[data-stage="hired"] .column-count {
+    background: #8b5cf6;
+    box-shadow: 0 2px 4px rgba(139, 92, 246, 0.3);
+}
+
+.candidate-card {
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: cardPop 0.4s ease-out forwards;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+}
+
+.candidate-card:nth-child(2) { animation-delay: 0.5s; }
+.candidate-card:nth-child(3) { animation-delay: 0.7s; }
+
+@keyframes cardPop {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.candidate-card:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    border-left-color: #3b82f6;
+}
+
+.kanban-column[data-stage="new"] .candidate-card:hover {
+    border-left-color: #3b82f6;
+}
+
+.kanban-column[data-stage="screening"] .candidate-card:hover {
+    border-left-color: #f59e0b;
+}
+
+.kanban-column[data-stage="interview"] .candidate-card:hover {
+    border-left-color: #10b981;
+}
+
+.kanban-column[data-stage="hired"] .candidate-card:hover {
+    border-left-color: #8b5cf6;
+}
+
+.candidate-name {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 0.8rem;
+}
+
+.ai-score {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    min-width: 45px;
+}
+
+.ai-score.high {
+    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+    color: #047857;
+    border-color: #10b981;
+    box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+}
+
+.ai-score.medium {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    color: #92400e;
+    border-color: #f59e0b;
+    box-shadow: 0 2px 4px rgba(245, 158, 11, 0.2);
+}
+
 /* Scene Info */
 .scene-info {
     padding: 40px 0;
@@ -3921,6 +4131,52 @@ body {
         text-align: left;
         max-width: 300px;
         margin: 0 auto;
+    }
+    
+    /* Kanban Board Mobile Styles */
+    .kanban-demo {
+        padding: 20px 15px;
+        max-width: 100%;
+        border-radius: 12px;
+    }
+    
+    .kanban-header h4 {
+        font-size: 1rem;
+    }
+    
+    .kanban-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .kanban-column {
+        padding: 10px;
+        min-height: 140px;
+    }
+    
+    .column-header {
+        font-size: 0.75rem;
+        margin-bottom: 8px;
+        padding-bottom: 6px;
+    }
+    
+    .candidate-card {
+        padding: 8px;
+        font-size: 0.7rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+    
+    .candidate-name {
+        font-size: 0.75rem;
+    }
+    
+    .ai-score {
+        align-self: flex-end;
+        font-size: 0.65rem;
+        padding: 3px 6px;
+        min-width: 35px;
     }
     
     /* Customer Types Section */
