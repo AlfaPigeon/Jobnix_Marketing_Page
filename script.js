@@ -284,9 +284,21 @@ function initWorkflowAnimation() {
     let animationTimeouts = [];
     let scrollTimeout = null; // Add throttling for scroll events
     
+    // Ensure all steps are visible on load
+    const ensureStepsVisible = () => {
+        const workflowSteps = document.querySelectorAll('.workflow-step');
+        workflowSteps.forEach(step => {
+            step.style.opacity = '1';
+            step.style.transform = 'translateY(0) scale(1)';
+        });
+    };
+    
     // Set up scroll-based animation
     const setupScrollAnimation = () => {
         if (!workflowSection) return;
+        
+        // Ensure steps are visible on load
+        ensureStepsVisible();
         
         window.addEventListener('scroll', handleScrollThrottled);
         handleScroll(); // Initial check
@@ -311,43 +323,46 @@ function initWorkflowAnimation() {
         // Show/hide scroll progress indicator
         const progressIndicator = document.getElementById('scrollProgress');
         if (progressIndicator) {
-            if (rect.top <= windowHeight ) {
+            if (rect.top <= windowHeight && rect.bottom >= 0) {
                 progressIndicator.classList.add('visible');
-            } else if (rect.bottom >= 0) {
+            } else {
                 progressIndicator.classList.remove('visible');
             }
         }
         
-        // Only animate when section is in view
-        if (rect.bottom <= 0 || rect.top >= windowHeight) return;
-        
-        // Calculate progress through the section based on how much has scrolled past the center
-        // We want each step to trigger when it reaches the middle of the screen
-        const sectionTop = rect.top;
-        const scrollProgress = Math.max(0, Math.min(1, (windowCenter - sectionTop) / sectionHeight));
-          // Divide the section into 5 equal parts for 5 steps
-        // Each step will be active for 20% of the scroll range
-        // Add some overlap to ensure smooth transitions
-        let newStep;
-        if (scrollProgress <= 0.22) {
-            newStep = 0;
-        } else if (scrollProgress <= 0.42) {
-            newStep = 1;
-        } else if (scrollProgress <= 0.62) {
-            newStep = 2;
-        } else if (scrollProgress <= 0.82) {
-            newStep = 3;
-        } else {
-            newStep = 4;
-        }
-        
-        // Only update if step has changed
-        if (newStep !== currentStep) {
-            currentStep = newStep;
-            updateTimelineProgress();
-            updateStepButtons();
-            updateScrollProgress();
-            showScene(currentStep);
+        // Ensure all steps are visible when section is in view
+        const workflowSteps = document.querySelectorAll('.workflow-step');
+        if (rect.bottom > 0 && rect.top < windowHeight) {
+            // Section is in view - make sure all steps are visible
+            workflowSteps.forEach(step => {
+                step.style.opacity = '1';
+                step.style.transform = 'translateY(0) scale(1)';
+            });
+            
+            // Calculate which step should be highlighted based on scroll position
+            const scrollProgress = Math.max(0, Math.min(1, (windowCenter - rect.top) / sectionHeight));
+            
+            let newStep;
+            if (scrollProgress <= 0.2) {
+                newStep = 0;
+            } else if (scrollProgress <= 0.4) {
+                newStep = 1;
+            } else if (scrollProgress <= 0.6) {
+                newStep = 2;
+            } else if (scrollProgress <= 0.8) {
+                newStep = 3;
+            } else {
+                newStep = 4;
+            }
+            
+            // Only update if step has changed
+            if (newStep !== currentStep) {
+                currentStep = newStep;
+                updateTimelineProgress();
+                updateStepButtons();
+                updateScrollProgress();
+                highlightCurrentStep(currentStep);
+            }
         }
     };
     
@@ -442,10 +457,13 @@ function initWorkflowAnimation() {
         updateTimelineProgress();
         updateStepButtons();
         updateScrollProgress();
-          // Hide all workflow steps
+          // Keep all workflow steps visible, just remove active state
         const workflowSteps = document.querySelectorAll('.workflow-step');
         workflowSteps.forEach(step => {
             step.classList.remove('active');
+            // Ensure steps remain visible
+            step.style.opacity = '1';
+            step.style.transform = 'translateY(0) scale(1)';
         });
         
         // Clear dynamic content
@@ -513,17 +531,19 @@ function initWorkflowAnimation() {
             }
         });
     }
-      function showScene(stepIndex) {
-        // Hide all workflow steps first
+    function highlightCurrentStep(stepIndex) {
+        // Keep all steps visible but highlight the current one
         const workflowSteps = document.querySelectorAll('.workflow-step');
-        workflowSteps.forEach(step => step.classList.remove('active'));
+        workflowSteps.forEach((step, index) => {
+            step.classList.remove('active');
+            if (index === stepIndex) {
+                step.classList.add('active');
+            }
+        });
         
-        // Show target step
+        // Start step-specific animations for the active step
         const targetStep = document.getElementById(`step${stepIndex + 1}`);
         if (targetStep) {
-            targetStep.classList.add('active');
-            
-            // Start step-specific animations
             switch(stepIndex) {
                 case 0:
                     animateEngagementStep();
@@ -542,6 +562,11 @@ function initWorkflowAnimation() {
                     break;
             }
         }
+    }
+    
+    function showScene(stepIndex) {
+        // Keep all workflow steps visible, just highlight the current one
+        highlightCurrentStep(stepIndex);
     }
       function animateEngagementStep() {
         const chatArea = document.querySelector('#step1 .chat-area');

@@ -564,12 +564,12 @@ body {
 
 /* Workflow Animation Section */
 .workflow-animation {
-    padding: 150px 0 200px 0; /* Extended padding for longer scroll experience */
+    padding: 8rem 0; /* Reduced padding */
     background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
     color: white;
     position: relative;
     overflow: hidden;
-    min-height: 400vh; /* Much longer to accommodate 5 steps with proper spacing */
+    min-height: auto; /* Remove fixed height constraint */
 }
 
 .workflow-animation::before {
@@ -699,19 +699,23 @@ body {
 /* Enhanced Workflow Steps Container */
 .workflow-steps-container {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Consistent spacing between steps */
 }
 
 /* Individual Workflow Steps */
 .workflow-step {
-    min-height: 120vh; /* Each step takes more screen space for better scroll experience */
+    min-height: 80vh; /* Reduced height for better mobile experience */
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    opacity: 0;
-    transform: translateY(100px) scale(0.95);
+    opacity: 1; /* Always visible by default */
+    transform: translateY(0) scale(1); /* Reset transform */
     transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    margin-bottom: 50vh; /* Large spacing between steps */
+    margin-bottom: 8rem; /* Reduced spacing */
+    padding: 2rem 0; /* Add padding for better spacing */
 }
 
 .workflow-step.active {
@@ -720,8 +724,8 @@ body {
 }
 
 .workflow-step.in-view {
-    opacity: 0.7;
-    transform: translateY(50px) scale(0.98);
+    opacity: 1; /* Keep fully visible when in view */
+    transform: translateY(0) scale(1);
 }
 
 /* Step Background Effects */
@@ -791,22 +795,19 @@ body {
 .step-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 60px;
     align-items: center;
     max-width: 1200px;
     width: 100%;
     position: relative;
     z-index: 2;
-    padding: 80px 60px;
+    padding: 60px 40px;
+    min-height: 400px; /* Ensure minimum content height */
+    margin: 0 auto; /* Center the content */
 }
 
 .step-content.reverse {
     grid-template-columns: 1fr 1fr;
-    direction: rtl;
-}
-
-.step-content.reverse > * {
-    direction: ltr;
 }
 
 .step-content.center {
@@ -818,23 +819,59 @@ body {
 /* Flexible ordering for responsive design */
 .step-info {
     grid-column: 1;
+    padding-right: 20px;
 }
 
 .step-visual {
     grid-column: 2;
+    padding-left: 20px;
 }
 
 .step-content.reverse .step-info {
     grid-column: 2;
+    padding-left: 20px;
+    padding-right: 0;
 }
 
 .step-content.reverse .step-visual {
     grid-column: 1;
+    padding-right: 20px;
+    padding-left: 0;
 }
 
 /* Step Info Styling */
 .step-info {
-    padding: 40px 0;
+    padding: 20px 0;
+}
+
+/* Desktop adjustments for better layout */
+@media (min-width: 1024px) {
+    .step-content {
+        gap: 80px;
+        padding: 80px 60px;
+    }
+    
+    .step-info {
+        padding: 40px 0;
+    }
+    
+    .step-info {
+        padding-right: 40px;
+    }
+    
+    .step-visual {
+        padding-left: 40px;
+    }
+    
+    .step-content.reverse .step-info {
+        padding-left: 40px;
+        padding-right: 0;
+    }
+    
+    .step-content.reverse .step-visual {
+        padding-right: 40px;
+        padding-left: 0;
+    }
 }
 
 .step-number {
@@ -3903,22 +3940,30 @@ body {
 /* Comprehensive Mobile Responsive Styles */
 @media (max-width: 1024px) {
     /* Workflow Animation Adjustments */
+    .workflow-animation {
+        padding: 5rem 0; /* Reduced padding for tablet */
+    }
+    
     .workflow-steps-container {
-        padding: 0 20px;
+        padding: 0 1.5rem;
     }
     
     .workflow-step {
-        margin-bottom: 80px;
-        min-height: auto;
-        padding: 40px 20px;
+        margin-bottom: 4rem; /* Consistent spacing */
+        min-height: auto; /* Remove height constraints */
+        padding: 2.5rem 1.5rem;
+        opacity: 1; /* Always visible */
+        transform: none; /* Remove complex transforms */
     }
     
     .step-content {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 2.5rem;
         text-align: center;
-        padding: 40px 20px;
+        padding: 2rem 1.5rem;
+        width: 100%;
+        max-width: none;
     }
     
     .step-content.reverse {
@@ -3972,20 +4017,27 @@ body {
 /* Additional Responsive Breakpoints for Better Mobile Adaptation */
 @media (max-width: 992px) {
     .workflow-step {
-        min-height: auto;
-        padding: 40px 20px;
+        min-height: auto; /* Remove height constraints */
+        padding: 2rem 1.5rem;
+        margin-bottom: 3rem;
+        opacity: 1; /* Always visible */
+        transform: none; /* Remove transforms */
     }
     
     .step-content {
         display: flex;
         flex-direction: column;
-        gap: 35px;
-        padding: 30px 15px;
+        gap: 2rem;
+        padding: 1.5rem;
+        text-align: center;
+        width: 100%;
+        max-width: none;
     }
     
     .step-info {
         order: 1;
         text-align: center;
+        padding: 0;
     }
     
     .step-visual {
@@ -4001,7 +4053,7 @@ body {
     .step-info p {
         font-size: 1.1rem;
         max-width: 600px;
-        margin: 0 auto 20px;
+        margin: 0 auto 1rem;
     }
 }
 
@@ -4145,13 +4197,17 @@ body {
     }
     
     /* Workflow Animation Section */
+    .workflow-animation {
+        padding: 4rem 0; /* Further reduced padding for mobile */
+    }
+    
     .workflow-header {
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 2rem; /* Reduced margin */
     }
     
     .workflow-intro {
-        margin-top: 20px;
+        margin-top: 1rem;
     }
     
     .scroll-progress-indicator {
@@ -4159,17 +4215,21 @@ body {
     }
     
     .workflow-step {
-        margin-bottom: 60px;
-        padding: 30px 15px;
-        min-height: auto;
+        margin-bottom: 3rem; /* Consistent spacing */
+        padding: 2rem 1rem; /* Increased padding for better content separation */
+        min-height: auto; /* Remove height constraints on mobile */
+        opacity: 1; /* Always visible on mobile */
+        transform: none; /* Remove transforms on mobile */
     }
     
     .step-content {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 2rem; /* Consistent gap */
         text-align: center;
-        padding: 20px 10px;
+        padding: 1.5rem;
+        width: 100%;
+        max-width: none;
     }
     
     /* Always put step-info first on mobile */
@@ -4177,7 +4237,8 @@ body {
         order: 1;
         text-align: center;
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 1rem;
+        padding: 0; /* Remove extra padding */
     }
     
     .step-visual {
@@ -4188,6 +4249,11 @@ body {
     }
     
     /* Override reverse ordering for mobile */
+    .step-content.reverse {
+        flex-direction: column; /* Ensure column layout */
+        direction: ltr; /* Reset direction */
+    }
+    
     .step-content.reverse .step-info {
         order: 1;
     }
@@ -4206,11 +4272,13 @@ body {
     .step-info h3 {
         font-size: 1.8rem;
         margin-bottom: 15px;
+        line-height: 1.2;
     }
     
     .step-info p {
         font-size: 1rem;
         line-height: 1.6;
+        margin-bottom: 1rem;
     }
     
     .feature-highlights {
@@ -4223,6 +4291,7 @@ body {
     .highlight-item {
         justify-content: center;
         max-width: 280px;
+        width: 100%;
     }
     
     .accuracy-stats,
@@ -4838,5 +4907,51 @@ body {
     
     .footer-bottom p {
         font-size: 12px;
+    }
+}
+
+/* Extra Small Mobile Devices */
+@media (max-width: 480px) {
+    .workflow-animation {
+        padding: 3rem 0;
+    }
+    
+    .workflow-step {
+        margin-bottom: 2rem;
+        padding: 1.5rem 0.75rem;
+    }
+    
+    .step-content {
+        gap: 1.5rem;
+        padding: 1rem;
+        min-height: 300px;
+    }
+    
+    .step-info h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .step-info p {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .step-number {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .feature-highlights {
+        gap: 0.75rem;
+        margin-top: 1rem;
+    }
+    
+    .highlight-item {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        max-width: 240px;
     }
 }
