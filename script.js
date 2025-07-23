@@ -948,10 +948,10 @@ function showDemoModal() {
   modal.className = "demo-modal";
   modal.style.cssText = `
         background: white;
-        padding: 40px;
+        padding: 20px;
         border-radius: 16px;
-        max-width: 500px;
-        width: 90%;
+        max-width: 600px;
+        width: 100%;
         text-align: center;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         animation: slideInUp 0.3s ease;
@@ -986,8 +986,13 @@ function showDemoModal() {
     }
   });
 
-  modal.querySelector(".close-modal").addEventListener("click", closeModal);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeModal();
+    }
+  });
 
+  modal.querySelector(".close-modal").addEventListener("click", closeModal);
   // Form submission
   modal.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
