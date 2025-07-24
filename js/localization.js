@@ -99,6 +99,11 @@ class LocalizationManager {
   }
 
   async detectCountry() {
+    // Extract country from browser locale (e.g., "en-US" -> "US")
+    const locale = navigator.language || navigator.userLanguage;
+    const countryCode = locale.includes('-') ? locale.split('-')[1] : null;
+    return countryCode || 'US'; // Default to US
+    /*
     try {
       // First try with a simple, reliable service
       try {
@@ -118,7 +123,7 @@ class LocalizationManager {
     } catch (error) {
       console.error('Country detection failed:', error);
       return null;
-    }
+    }*/
   }
 
   getBrowserLanguage() {
