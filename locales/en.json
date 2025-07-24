@@ -1,0 +1,97 @@
+{
+  "nav": {
+    "requestDemo": "Request Demo"
+  },
+  "hero": {
+    "title": "Use Intelligent HR Tools",
+    "subtitle": "Use EmployCase as middleware in your recruitment process. Check out our smart interview assistant.",
+    "requestDemo": "Request a Demo",
+    "chatHeader": "EmployCase Interview Assistant",
+    "chatStatus": "Online",
+    "chatPlaceholder": "Type your response...",
+    "dropboxText": "Drop your CV here or click to browse",
+    "fileTypes": "PDF, DOC, DOCX files only",
+    "uploadProgress": "Uploading...",
+    "uploadSuccess": "CV uploaded successfully!"
+  },
+  "painPoints": {
+    "title": "Is This Your Hiring Reality?",
+    "card1": {
+      "title": "Endless CVs, Limited Time",
+      "description": "HR teams bogged down manually sifting through hundreds of applications for nearly identical roles."
+    },
+    "card2": {
+      "title": "Inconsistent Information",
+      "description": "Candidate data scattered across countless CV formats, making comparisons nearly impossible."
+    },
+    "card3": {
+      "title": "Losing Top Talent",
+      "description": "Lengthy screening processes mean the best candidates are already off the market."
+    }
+  },
+  "workflow": {
+    "step1": {
+      "title": "Smart Candidate Engagement",
+      "description": "AI assistant guides candidates through natural conversations, gathering comprehensive information while maintaining engagement.",
+      "feature1": "Natural Language Processing",
+      "feature2": "Document Processing"
+    },
+    "step2": {
+      "title": "Intelligent Data Extraction",
+      "description": "AI parsing transforms unstructured CVs into standardized, comparable profiles with meaningful insights.",
+      "feature1": "AI-Powered Parsing",
+      "feature2": "Structured Output"
+    },
+    "step3": {
+      "title": "Deep AI Analysis",
+      "description": "Multi-dimensional evaluation analyzes candidates across skills, experience, cultural fit, and growth potential.",
+      "feature1": "Machine Learning",
+      "feature2": "Multi-criteria Analysis"
+    },
+    "step4": {
+      "title": "Superior Pipeline",
+      "description": "Use tools to rank and compare candidates. Visualize your candidate applications. with AI-driven insights for each stage.",
+      "feature1": "Smart tools"
+    },
+    "kanban": {
+      "title": "Candidate Pipeline",
+      "new": "New",
+      "screening": "Screening",
+      "interview": "Interview",
+      "hired": "Hired"
+    },
+    "dataFields": {
+      "name": "Name:",
+      "experience": "Experience:",
+      "skills": "Skills:",
+      "education": "Education:",
+      "leadership": "Leadership:"
+    },
+    "metrics": {
+      "skillsMatch": "Skills Match",
+      "experience": "Experience",
+      "cultureFit": "Culture Fit",
+      "leadership": "Leadership"
+    }
+  },
+  "cta": {
+    "title": "Ready to Revolutionize Your Hiring?",
+    "subtitle": "See firsthand how EmployCase can transform your recruitment process!",
+    "button": "Request Your Free Demo Today!"
+  },
+  "footer": {
+    "copyright": "© 2025 EmployCase. All Rights Reserved."
+  },
+  "chat": {
+    "greeting": "Hello! I'm here to help with your application. Could you please upload your CV?",
+    "cvRequest": "I'll need to review your CV first. Please upload it using the button below.",
+    "processing": "Great! Let me process your CV...",
+    "analysisComplete": "Perfect! I can see you have extensive experience in digital marketing. Let me ask you a few questions to better understand your background.",
+    "question1": "I notice you've worked with various marketing platforms. Which ones do you feel most confident using?",
+    "response1": "I'm most experienced with Google Ads, Facebook Business Manager, and HubSpot. I've managed campaigns with budgets exceeding $500K annually.",
+    "question2": "Excellent! Can you tell me about a challenging campaign you've managed recently?",
+    "response2": "Last quarter, I led a multi-channel campaign for a product launch that achieved 300% ROI within 3 months, managing a team of 5 specialists.",
+    "question3": "That's impressive! Based on your experience, you seem like a strong fit for our Senior Marketing Manager position. How soon could you start?",
+    "response3": "I could start within 2 weeks after accepting an offer. I'm very excited about this opportunity!"
+  }
+}

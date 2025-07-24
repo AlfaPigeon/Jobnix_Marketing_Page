@@ -1,0 +1,97 @@
+{
+  "nav": {
+    "requestDemo": "데모 요청"
+  },
+  "hero": {
+    "title": "스마트 HR 도구 사용",
+    "subtitle": "채용 프로세스에서 EmployCase를 미들웨어로 사용하세요. 우리의 스마트 면접 어시스턴트를 확인해보세요.",
+    "requestDemo": "데모 요청",
+    "chatHeader": "EmployCase 면접 어시스턴트",
+    "chatStatus": "온라인",
+    "chatPlaceholder": "답변을 입력하세요...",
+    "dropboxText": "이력서를 여기에 드롭하거나 클릭하여 탐색",
+    "fileTypes": "PDF, DOC, DOCX 파일만",
+    "uploadProgress": "업로드 중...",
+    "uploadSuccess": "이력서가 성공적으로 업로드되었습니다!"
+  },
+  "painPoints": {
+    "title": "이것이 당신의 채용 현실입니까?",
+    "card1": {
+      "title": "끝없는 이력서, 제한된 시간",
+      "description": "거의 동일한 역할에 대한 수백 건의 지원서를 수동으로 검토하느라 바쁜 HR 팀."
+    },
+    "card2": {
+      "title": "일관성 없는 정보",
+      "description": "수많은 이력서 형식에 흩어진 후보자 데이터로 인해 비교가 거의 불가능합니다."
+    },
+    "card3": {
+      "title": "최고 인재 손실",
+      "description": "긴 선별 과정은 최고의 후보자들이 이미 시장을 떠났음을 의미합니다."
+    }
+  },
+  "workflow": {
+    "step1": {
+      "title": "스마트 후보자 참여",
+      "description": "AI 어시스턴트가 자연스러운 대화를 통해 후보자를 안내하며 참여를 유지하면서 포괄적인 정보를 수집합니다.",
+      "feature1": "자연어 처리",
+      "feature2": "문서 처리"
+    },
+    "step2": {
+      "title": "지능형 데이터 추출",
+      "description": "AI 파싱이 비구조화된 이력서를 의미 있는 통찰력이 있는 표준화되고 비교 가능한 프로필로 변환합니다.",
+      "feature1": "AI 기반 파싱",
+      "feature2": "구조화된 출력"
+    },
+    "step3": {
+      "title": "깊은 AI 분석",
+      "description": "다차원 평가가 기술, 경험, 문화적 적합성 및 성장 잠재력에 걸쳐 후보자를 분석합니다.",
+      "feature1": "머신러닝",
+      "feature2": "다중 기준 분석"
+    },
+    "step4": {
+      "title": "우수한 파이프라인",
+      "description": "후보자를 순위화하고 비교하는 도구를 사용하세요. 각 단계에 대한 AI 기반 통찰력으로 후보자 지원을 시각화하세요.",
+      "feature1": "스마트 도구"
+    },
+    "kanban": {
+      "title": "후보자 파이프라인",
+      "new": "신규",
+      "screening": "스크리닝",
+      "interview": "면접",
+      "hired": "채용됨"
+    },
+    "dataFields": {
+      "name": "이름:",
+      "experience": "경험:",
+      "skills": "기술:",
+      "education": "교육:",
+      "leadership": "리더십:"
+    },
+    "metrics": {
+      "skillsMatch": "기술 매치",
+      "experience": "경험",
+      "cultureFit": "문화적 적합성",
+      "leadership": "리더십"
+    }
+  },
+  "cta": {
+    "title": "채용을 혁신할 준비가 되셨나요?",
+    "subtitle": "EmployCase가 어떻게 채용 프로세스를 변화시킬 수 있는지 직접 확인하세요!",
+    "button": "오늘 무료 데모를 요청하세요!"
+  },
+  "footer": {
+    "copyright": "© 2025 EmployCase. 모든 권리 보유."
+  },
+  "chat": {
+    "greeting": "안녕하세요! 귀하의 지원을 도와드리겠습니다. 이력서를 업로드해 주시겠어요?",
+    "cvRequest": "먼저 이력서를 검토해야 합니다. 아래 버튼을 사용해서 업로드해 주세요.",
+    "processing": "좋습니다! 이력서를 처리하겠습니다...",
+    "analysisComplete": "완벽합니다! 디지털 마케팅 분야에서 광범위한 경험을 가지고 계신 것을 볼 수 있습니다. 배경을 더 잘 이해하기 위해 몇 가지 질문을 드리겠습니다.",
+    "question1": "다양한 마케팅 플랫폼에서 일하신 것으로 보입니다. 어떤 것을 가장 자신 있게 사용하시나요?",
+    "response1": "Google Ads, Facebook Business Manager, HubSpot에 가장 경험이 많습니다. 연간 50만 달러를 초과하는 예산으로 캠페인을 관리했습니다.",
+    "question2": "훌륭합니다! 최근에 관리한 도전적인 캠페인에 대해 말씀해 주실 수 있나요?",
+    "response2": "지난 분기에 3개월 내에 300% ROI를 달성한 제품 런칭을 위한 멀티채널 캠페인을 이끌었고, 5명의 전문가 팀을 관리했습니다.",
+    "question3": "인상적입니다! 경험을 바탕으로 보면 시니어 마케팅 매니저 포지션에 강력한 후보자인 것 같습니다. 얼마나 빨리 시작할 수 있나요?",
+    "response3": "제안을 수락한 후 2주 내에 시작할 수 있습니다. 이 기회에 대해 매우 흥미를 느끼고 있습니다!"
+  }
+}

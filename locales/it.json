@@ -1,0 +1,97 @@
+{
+  "nav": {
+    "requestDemo": "Richiedi Demo"
+  },
+  "hero": {
+    "title": "Usa Strumenti HR Intelligenti",
+    "subtitle": "Usa EmployCase come middleware nel tuo processo di reclutamento. Scopri il nostro assistente per colloqui intelligente.",
+    "requestDemo": "Richiedi una Demo",
+    "chatHeader": "Assistente per Colloqui EmployCase",
+    "chatStatus": "Online",
+    "chatPlaceholder": "Digita la tua risposta...",
+    "dropboxText": "Trascina qui il tuo CV o clicca per sfogliare",
+    "fileTypes": "Solo file PDF, DOC, DOCX",
+    "uploadProgress": "Caricamento...",
+    "uploadSuccess": "CV caricato con successo!"
+  },
+  "painPoints": {
+    "title": "È Questa la Tua Realtà di Assunzione?",
+    "card1": {
+      "title": "CV Infiniti, Tempo Limitato",
+      "description": "Team HR sopraffatti dalla revisione manuale di centinaia di candidature per ruoli quasi identici."
+    },
+    "card2": {
+      "title": "Informazioni Incoerenti",
+      "description": "Dati dei candidati sparsi in innumerevoli formati di CV, rendendo i confronti quasi impossibili."
+    },
+    "card3": {
+      "title": "Perdere i Migliori Talenti",
+      "description": "Processi di selezione lunghi significano che i migliori candidati sono già fuori dal mercato."
+    }
+  },
+  "workflow": {
+    "step1": {
+      "title": "Coinvolgimento Intelligente dei Candidati",
+      "description": "L'assistente AI guida i candidati attraverso conversazioni naturali, raccogliendo informazioni complete mantenendo il coinvolgimento.",
+      "feature1": "Elaborazione del Linguaggio Naturale",
+      "feature2": "Elaborazione Documenti"
+    },
+    "step2": {
+      "title": "Estrazione Intelligente dei Dati",
+      "description": "L'analisi AI trasforma CV non strutturati in profili standardizzati e confrontabili con insights significativi.",
+      "feature1": "Analisi Alimentata da AI",
+      "feature2": "Output Strutturato"
+    },
+    "step3": {
+      "title": "Analisi AI Profonda",
+      "description": "La valutazione multidimensionale analizza i candidati su competenze, esperienza, adattamento culturale e potenziale di crescita.",
+      "feature1": "Apprendimento Automatico",
+      "feature2": "Analisi Multi-criterio"
+    },
+    "step4": {
+      "title": "Pipeline Superiore",
+      "description": "Usa strumenti per classificare e confrontare candidati. Visualizza le tue candidature con insights alimentati da AI per ogni fase.",
+      "feature1": "Strumenti Intelligenti"
+    },
+    "kanban": {
+      "title": "Pipeline Candidati",
+      "new": "Nuovo",
+      "screening": "Selezione",
+      "interview": "Colloquio",
+      "hired": "Assunto"
+    },
+    "dataFields": {
+      "name": "Nome:",
+      "experience": "Esperienza:",
+      "skills": "Competenze:",
+      "education": "Istruzione:",
+      "leadership": "Leadership:"
+    },
+    "metrics": {
+      "skillsMatch": "Corrispondenza Competenze",
+      "experience": "Esperienza",
+      "cultureFit": "Adattamento Culturale",
+      "leadership": "Leadership"
+    }
+  },
+  "cta": {
+    "title": "Pronto a Rivoluzionare le Tue Assunzioni?",
+    "subtitle": "Vedi in prima persona come EmployCase può trasformare il tuo processo di reclutamento!",
+    "button": "Richiedi la Tua Demo Gratuita Oggi!"
+  },
+  "footer": {
+    "copyright": "© 2025 EmployCase. Tutti i Diritti Riservati."
+  },
+  "chat": {
+    "greeting": "Ciao! Sono qui per aiutarti con la tua candidatura. Potresti caricare il tuo CV per favore?",
+    "cvRequest": "Dovrò prima rivedere il tuo CV. Per favore caricalo usando il pulsante qui sotto.",
+    "processing": "Ottimo! Fammi elaborare il tuo CV...",
+    "analysisComplete": "Perfetto! Posso vedere che hai una vasta esperienza nel marketing digitale. Fammi farti alcune domande per capire meglio il tuo background.",
+    "question1": "Noto che hai lavorato con varie piattaforme di marketing. Con quali ti senti più sicuro?",
+    "response1": "Ho più esperienza con Google Ads, Facebook Business Manager e HubSpot. Ho gestito campagne con budget superiori a 500K$ annuali.",
+    "question2": "Eccellente! Puoi parlarmi di una campagna impegnativa che hai gestito di recente?",
+    "response2": "L'ultimo trimestre, ho guidato una campagna multi-canale per un lancio prodotto che ha raggiunto il 300% di ROI in 3 mesi, gestendo un team di 5 specialisti.",
+    "question3": "È impressionante! Basandomi sulla tua esperienza, sembri un candidato forte per la nostra posizione di Senior Marketing Manager. Quanto presto potresti iniziare?",
+    "response3": "Potrei iniziare entro 2 settimane dall'accettazione di un'offerta. Sono molto entusiasta di questa opportunità!"
+  }
+}

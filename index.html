@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EmployCase - AI-Powered Recruitment Tool Platform</title>
+    <title data-i18n="hero.title">EmployCase - AI-Powered Recruitment Tool Platform</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
@@ -23,7 +23,7 @@
           <span>EmployCase</span>
         </div>
         <div class="nav-menu">
-          <button class="cta-button nav-cta">Request Demo</button>
+          <button class="cta-button nav-cta" data-i18n="nav.requestDemo">Request Demo</button>
         </div>
         <div class="nav-toggle" id="navToggle">
           <span></span>
@@ -38,15 +38,15 @@
       <div class="hero-container">
         <div class="hero-content">
           <div class="hero-text">
-            <h2 class="hero-title gradient-text">
+            <h2 class="hero-title gradient-text" data-i18n="hero.title">
               Use Intelligent HR Tools<br />
    
             </h2>
-            <p class="hero-subtitle">
+            <p class="hero-subtitle" data-i18n="hero.subtitle">
               Use EmployCase as middleware in your recruitment process. Check out our smart interview assistant.
             </p>
             <div class="hero-buttons">
-              <button class="cta-button primary">Request a Demo</button>
+              <button class="cta-button primary" data-i18n="hero.requestDemo">Request a Demo</button>
 
             </div>
   
@@ -58,8 +58,8 @@
                   <i class="fas fa-robot"></i>
                 </div>
                 <div class="chat-info">
-                  <h3>EmployCase Interview Assistant</h3>
-                  <span class="status">Online</span>
+                  <h3 data-i18n="hero.chatHeader">EmployCase Interview Assistant</h3>
+                  <span class="status" data-i18n="hero.chatStatus">Online</span>
                 </div>
               </div>
               <div class="chat-messages" id="chatMessages">
@@ -73,8 +73,8 @@
                 <div class="dropbox" id="dropbox">
                   <div class="dropbox-content">
                     <i class="fas fa-cloud-upload-alt"></i>
-                    <p>Drop your CV here or click to browse</p>
-                    <span class="file-types">PDF, DOC, DOCX files only</span>
+                    <p data-i18n="hero.dropboxText">Drop your CV here or click to browse</p>
+                    <span class="file-types" data-i18n="hero.fileTypes">PDF, DOC, DOCX files only</span>
                   </div>
                   <div
                     class="upload-progress"
@@ -84,7 +84,7 @@
                     <div class="progress-bar">
                       <div class="progress-fill" id="progressFill"></div>
                     </div>
-                    <span class="progress-text" id="progressText"
+                    <span class="progress-text" id="progressText" data-i18n="hero.uploadProgress"
                       >Uploading... 0%</span
                     >
                   </div>
@@ -94,13 +94,14 @@
                     style="display: none"
                   >
                     <i class="fas fa-check-circle"></i>
-                    <span>CV uploaded successfully!</span>
+                    <span data-i18n="hero.uploadSuccess">CV uploaded successfully!</span>
                   </div>
                 </div>
               </div>
               <div class="chat-input">
                 <input
                   type="text"
+                  data-i18n="hero.chatPlaceholder"
                   placeholder="Type your response..."
                   disabled
                 />
@@ -115,28 +116,28 @@
         <!-- Pain Points Section -->
     <section class="pain-points">
       <div class="container">
-        <h2 class="section-title">Is This Your Hiring Reality?</h2>
+        <h2 class="section-title" data-i18n="painPoints.title">Is This Your Hiring Reality?</h2>
         <div class="pain-grid">
           <div class="pain-card">
             <i class="fas fa-file-alt"></i>
-            <h3>Endless CVs, Limited Time</h3>
-            <p>
+            <h3 data-i18n="painPoints.card1.title">Endless CVs, Limited Time</h3>
+            <p data-i18n="painPoints.card1.description">
               HR teams bogged down manually sifting through hundreds of
               applications for nearly identical roles.
             </p>
           </div>
           <div class="pain-card">
             <i class="fas fa-puzzle-piece"></i>
-            <h3>Inconsistent Information</h3>
-            <p>
+            <h3 data-i18n="painPoints.card2.title">Inconsistent Information</h3>
+            <p data-i18n="painPoints.card2.description">
               Candidate data scattered across countless CV formats, making
               comparisons nearly impossible.
             </p>
           </div>
           <div class="pain-card">
             <i class="fas fa-clock"></i>
-            <h3>Losing Top Talent</h3>
-            <p>
+            <h3 data-i18n="painPoints.card3.title">Losing Top Talent</h3>
+            <p data-i18n="painPoints.card3.description">
               Lengthy screening processes mean the best candidates are already
               off the market.
             </p>
@@ -217,18 +218,18 @@
               </div>
               <div class="step-info">
                 <div class="step-number">01</div>
-                <h3>Smart Candidate Engagement</h3>
-                <p>
+                <h3 data-i18n="workflow.step1.title">Smart Candidate Engagement</h3>
+                <p data-i18n="workflow.step1.description">
                   AI assistant guides candidates through natural conversations, gathering comprehensive information while maintaining engagement.
                 </p>
                 <div class="feature-highlights">
                   <div class="highlight-item">
                     <i class="fas fa-comments"></i>
-                    <span>Natural Language Processing</span>
+                    <span data-i18n="workflow.step1.feature1">Natural Language Processing</span>
                   </div>
                   <div class="highlight-item">
                     <i class="fas fa-upload"></i>
-                    <span>Document Processing</span>
+                    <span data-i18n="workflow.step1.feature2">Document Processing</span>
                   </div>
                 </div>
               </div>
@@ -300,18 +301,18 @@
               </div>
                             <div class="step-info">
                 <div class="step-number">02</div>
-                <h3>Intelligent Data Extraction</h3>
-                <p>
+                <h3 data-i18n="workflow.step2.title">Intelligent Data Extraction</h3>
+                <p data-i18n="workflow.step2.description">
                   AI parsing transforms unstructured CVs into standardized, comparable profiles with meaningful insights.
                 </p>
                 <div class="feature-highlights">
                   <div class="highlight-item">
                     <i class="fas fa-magic"></i>
-                    <span>AI-Powered Parsing</span>
+                    <span data-i18n="workflow.step2.feature1">AI-Powered Parsing</span>
                   </div>
                   <div class="highlight-item">
                     <i class="fas fa-database"></i>
-                    <span>Structured Output</span>
+                    <span data-i18n="workflow.step2.feature2">Structured Output</span>
                   </div>
                 </div>
               </div>
@@ -383,18 +384,18 @@
               </div>
               <div class="step-info">
                 <div class="step-number">03</div>
-                <h3>Deep AI Analysis</h3>
-                <p>
+                <h3 data-i18n="workflow.step3.title">Deep AI Analysis</h3>
+                <p data-i18n="workflow.step3.description">
                   Multi-dimensional evaluation analyzes candidates across skills, experience, cultural fit, and growth potential.
                 </p>
                 <div class="feature-highlights">
                   <div class="highlight-item">
                     <i class="fas fa-brain"></i>
-                    <span>Machine Learning</span>
+                    <span data-i18n="workflow.step3.feature1">Machine Learning</span>
                   </div>
                   <div class="highlight-item">
                     <i class="fas fa-chart-line"></i>
-                    <span>Multi-criteria Analysis</span>
+                    <span data-i18n="workflow.step3.feature2">Multi-criteria Analysis</span>
                   </div>
                 </div>
               </div>
@@ -415,7 +416,7 @@
               <div class="step-visual">
                 <div class="kanban-demo">
                   <div class="kanban-header">
-                    <h4><i class="fas fa-columns"></i>Candidate Pipeline</h4>
+                    <h4><i class="fas fa-columns"></i><span data-i18n="workflow.kanban.title">Candidate Pipeline</span></h4>
                   </div>
                   
                   <div class="kanban-board" id="kanbanBoard4">
@@ -476,14 +477,14 @@
               
               <div class="step-info">
                 <div class="step-number">04</div>
-                <h3>Superior Pipeline</h3>
-                <p>
+                <h3 data-i18n="workflow.step4.title">Superior Pipeline</h3>
+                <p data-i18n="workflow.step4.description">
                   Use tools to rank and compare candidates. Visualize your candidate applications. with AI-driven insights for each stage.
                 </p>
                 <div class="feature-highlights">
                   <div class="highlight-item">
                     <i class="fas fa-tools"></i>
-                    <span>Smart tools</span>
+                    <span data-i18n="workflow.step4.feature1">Smart tools</span>
                   </div>
 
                 
@@ -501,12 +502,12 @@
     <section class="cta-section">
       <div class="container">
         <div class="cta-content">
-          <h2 class="cta-title">Ready to Revolutionize Your Hiring?</h2>
-          <p class="cta-subtitle">
+          <h2 class="cta-title" data-i18n="cta.title">Ready to Revolutionize Your Hiring?</h2>
+          <p class="cta-subtitle" data-i18n="cta.subtitle">
             See firsthand how EmployCase can transform your recruitment process!
           </p>
           <div class="cta-buttons">
-            <button class="cta-button primary large">
+            <button class="cta-button primary large" data-i18n="cta.button">
               Request Your Free Demo Today!
             </button>
           </div>
@@ -534,11 +535,12 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2025 EmployCase. All Rights Reserved.</p>
+          <p data-i18n="footer.copyright">&copy; 2025 EmployCase. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
 
+    <script src="js/localization.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,0 +1,97 @@
+{
+  "nav": {
+    "requestDemo": "Solicitar Demo"
+  },
+  "hero": {
+    "title": "Usa Herramientas de RRHH Inteligentes",
+    "subtitle": "Usa EmployCase como middleware en tu proceso de reclutamiento. Echa un vistazo a nuestro asistente de entrevistas inteligente.",
+    "requestDemo": "Solicitar una Demo",
+    "chatHeader": "Asistente de Entrevistas EmployCase",
+    "chatStatus": "En línea",
+    "chatPlaceholder": "Escribe tu respuesta...",
+    "dropboxText": "Arrastra tu CV aquí o haz clic para explorar",
+    "fileTypes": "Solo archivos PDF, DOC, DOCX",
+    "uploadProgress": "Subiendo...",
+    "uploadSuccess": "¡CV subido exitosamente!"
+  },
+  "painPoints": {
+    "title": "¿Es Esta Tu Realidad de Contratación?",
+    "card1": {
+      "title": "CVs Infinitos, Tiempo Limitado",
+      "description": "Equipos de RRHH abrumados revisando manualmente cientos de solicitudes para roles casi idénticos."
+    },
+    "card2": {
+      "title": "Información Inconsistente",
+      "description": "Datos de candidatos dispersos en innumerables formatos de CV, haciendo las comparaciones casi imposibles."
+    },
+    "card3": {
+      "title": "Perdiendo el Mejor Talento",
+      "description": "Los procesos de selección largos significan que los mejores candidatos ya están fuera del mercado."
+    }
+  },
+  "workflow": {
+    "step1": {
+      "title": "Participación Inteligente del Candidato",
+      "description": "El asistente de IA guía a los candidatos a través de conversaciones naturales, recopilando información completa mientras mantiene el compromiso.",
+      "feature1": "Procesamiento de Lenguaje Natural",
+      "feature2": "Procesamiento de Documentos"
+    },
+    "step2": {
+      "title": "Extracción Inteligente de Datos",
+      "description": "El análisis de IA transforma CVs no estructurados en perfiles estandarizados y comparables con insights significativos.",
+      "feature1": "Análisis Impulsado por IA",
+      "feature2": "Salida Estructurada"
+    },
+    "step3": {
+      "title": "Análisis Profundo de IA",
+      "description": "La evaluación multidimensional analiza candidatos en habilidades, experiencia, ajuste cultural y potencial de crecimiento.",
+      "feature1": "Aprendizaje Automático",
+      "feature2": "Análisis Multi-criterio"
+    },
+    "step4": {
+      "title": "Pipeline Superior",
+      "description": "Usa herramientas para clasificar y comparar candidatos. Visualiza tus solicitudes de candidatos con insights impulsados por IA para cada etapa.",
+      "feature1": "Herramientas Inteligentes"
+    },
+    "kanban": {
+      "title": "Pipeline de Candidatos",
+      "new": "Nuevo",
+      "screening": "Selección",
+      "interview": "Entrevista",
+      "hired": "Contratado"
+    },
+    "dataFields": {
+      "name": "Nombre:",
+      "experience": "Experiencia:",
+      "skills": "Habilidades:",
+      "education": "Educación:",
+      "leadership": "Liderazgo:"
+    },
+    "metrics": {
+      "skillsMatch": "Coincidencia de Habilidades",
+      "experience": "Experiencia",
+      "cultureFit": "Ajuste Cultural",
+      "leadership": "Liderazgo"
+    }
+  },
+  "cta": {
+    "title": "¿Listo para Revolucionar tu Contratación?",
+    "subtitle": "¡Ve de primera mano cómo EmployCase puede transformar tu proceso de reclutamiento!",
+    "button": "¡Solicita tu Demo Gratuita Hoy!"
+  },
+  "footer": {
+    "copyright": "© 2025 EmployCase. Todos los Derechos Reservados."
+  },
+  "chat": {
+    "greeting": "¡Hola! Estoy aquí para ayudar con tu solicitud. ¿Podrías subir tu CV por favor?",
+    "cvRequest": "Necesitaré revisar tu CV primero. Por favor súbelo usando el botón de abajo.",
+    "processing": "¡Genial! Déjame procesar tu CV...",
+    "analysisComplete": "¡Perfecto! Puedo ver que tienes amplia experiencia en marketing digital. Déjame hacerte algunas preguntas para entender mejor tu experiencia.",
+    "question1": "Noto que has trabajado con varias plataformas de marketing. ¿Con cuáles te sientes más seguro?",
+    "response1": "Tengo más experiencia con Google Ads, Facebook Business Manager y HubSpot. He gestionado campañas con presupuestos que superan los $500K anuales.",
+    "question2": "¡Excelente! ¿Puedes contarme sobre una campaña desafiante que hayas gestionado recientemente?",
+    "response2": "El trimestre pasado, lideré una campaña multicanal para el lanzamiento de un producto que logró 300% de ROI en 3 meses, gestionando un equipo de 5 especialistas.",
+    "question3": "¡Eso es impresionante! Basado en tu experiencia, pareces ser una excelente opción para nuestra posición de Gerente Senior de Marketing. ¿Qué tan pronto podrías empezar?",
+    "response3": "Podría empezar dentro de 2 semanas después de aceptar una oferta. ¡Estoy muy emocionado por esta oportunidad!"
+  }
+}

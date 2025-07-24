@@ -1,5 +1,18 @@
 // Wait for DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", function () {
+  // Wait for localization to be ready, then initialize all functionality
+  if (window.i18n) {
+    // If localization is already loaded, initialize immediately
+    initializeApp();
+  } else {
+    // Wait for localization to load
+    window.addEventListener('localizationReady', initializeApp);
+    // Fallback timeout in case localization fails
+    setTimeout(initializeApp, 3000);
+  }
+});
+
+function initializeApp() {
   // Initialize all functionality
   initMobileNavigation();
   initChatSimulation();
@@ -8,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initSmoothScrolling();
   initScrollAnimations();
   initCTAButtons();
-});
+}
 
 // Mobile Navigation
 function initMobileNavigation() {
@@ -61,71 +74,81 @@ function initMobileNavigation() {
 function initChatSimulation() {
   const chatMessages = document.getElementById("chatMessages");
 
-  const conversation = [
-    {
-      type: "bot",
-      message:
-        "Hi! I'm the EmployCase AI Assistant. I'm here to help streamline your application process. What's your name?",
-      delay: 1000,
-    },
-    {
-      type: "user",
-      message: "Hi, I'm Sarah Johnson",
-      delay: 2500,
-    },
-    {
-      type: "bot",
-      message:
-        "That's great! Could you please upload your CV? I'll extract the relevant information and ask you some specific questions about your qualifications.",
-      delay: 4000,
-      showDropbox: true,
-    },
-    {
-      type: "bot",
-      message:
-        "Nice to meet you, Sarah! I see you're applying for the Senior Marketing Manager position. Can you tell me about your experience in digital marketing?",
-      delay: 6500,
-    },
-    {
-      type: "user",
-      message:
-        "I have 8 years of experience in digital marketing, specializing in content strategy and social media campaigns.",
-      delay: 8500,
-    },
+  // Function to get localized conversation
+  function getLocalizedConversation() {
+    const currentLang = window.i18n ? window.i18n.getCurrentLanguage() : 'en';
+    
+    return [
+      {
+        type: "bot",
+        message: window.i18n ? window.i18n.getText('chat.greeting') : "Hello! I'm here to help with your application. Could you please upload your CV?",
+        delay: 1000,
+      },
+      {
+        type: "user",
+        message: "Hi, I'm Sarah Johnson",
+        delay: 2500,
+      },
+      {
+        type: "bot",
+        message: window.i18n ? window.i18n.getText('chat.cvRequest') : "I'll need to review your CV first. Please upload it using the button below.",
+        delay: 4000,
+        showDropbox: true,
+      },
+      {
+        type: "bot",
+        message: window.i18n ? window.i18n.getText('chat.processing') : "Great! Let me process your CV...",
+        delay: 6500,
+      },
+      {
+        type: "bot",
+        message: window.i18n ? window.i18n.getText('chat.analysisComplete') : "Perfect! I can see you have extensive experience in digital marketing. Let me ask you a few questions to better understand your background.",
+        delay: 8500,
+      },
+      {
+        type: "bot",
+        message: window.i18n ? window.i18n.getText('chat.question1') : "I notice you've worked with various marketing platforms. Which ones do you feel most confident using?",
+        delay: 10500,
+      },
+      {
+        type: "user",
+        message: window.i18n ? window.i18n.getText('chat.response1') : "I'm most experienced with Google Ads, Facebook Business Manager, and HubSpot. I've managed campaigns with budgets exceeding $500K annually.",
+        delay: 12500,
+      },
+      {
+        type: "bot",
+        message: window.i18n ? window.i18n.getText('chat.question2') : "Excellent! Can you tell me about a challenging campaign you've managed recently?",
+        delay: 14500,
+      },
+      {
+        type: "user",
+        message: window.i18n ? window.i18n.getText('chat.response2') : "Last quarter, I led a multi-channel campaign for a product launch that achieved 300% ROI within 3 months, managing a team of 5 specialists.",
+        delay: 16500,
+      },
+      {
+        type: "bot",
+        message: window.i18n ? window.i18n.getText('chat.question3') : "That's impressive! Based on your experience, you seem like a strong fit for our Senior Marketing Manager position. How soon could you start?",
+        delay: 18500,
+      },
+      {
+        type: "user",
+        message: window.i18n ? window.i18n.getText('chat.response3') : "I could start within 2 weeks after accepting an offer. I'm very excited about this opportunity!",
+        delay: 20500,
+      },
+    ];
+  }
 
-    {
-      type: "bot",
-      message:
-        "Perfect! I've analyzed your CV. I notice you have experience with Google Analytics and Facebook Ads. Have you worked with programmatic advertising platforms?",
-      delay: 12000,
-    },
-    {
-      type: "user",
-      message:
-        "Yes, I've worked extensively with DV360 and The Trade Desk for programmatic campaigns.",
-      delay: 14500,
-    },
-    {
-      type: "bot",
-      message:
-        "Excellent! One more question - this role requires managing a team of 5+ people. Can you share your leadership experience?",
-      delay: 16500,
-    },
-    {
-      type: "user",
-      message:
-        "I currently manage a team of 7 marketing specialists and have been doing so for the past 3 years.",
-      delay: 18500,
-    },
-    {
-      type: "bot",
-      message:
-        "Thank you, Sarah! I've gathered all the necessary information. Your profile has been compiled and sent to the HR team. They'll review it within 24 hours. Good luck! 🎉",
-      delay: 20500,
-    },
-  ];
-
+  let conversation = getLocalizedConversation();
   let messageIndex = 0;
+
+  // Function to update chat language (called from localization manager)
+  window.updateChatLanguage = function(newLanguage) {
+    conversation = getLocalizedConversation();
+    // Restart chat with new language
+    chatMessages.innerHTML = '';
+    messageIndex = 0;
+    setTimeout(addMessage, 500);
+  };
 
   function addMessage() {
     if (messageIndex >= conversation.length) {
