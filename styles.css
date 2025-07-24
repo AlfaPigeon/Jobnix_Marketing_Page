@@ -4246,6 +4246,13 @@ body {
         width: 100%;
         max-width: 100%;
         margin: 0 auto;
+        overflow: hidden; /* Prevent visual overflow */
+    }
+    
+    /* Scale down all visual containers for mobile */
+    .step-visual > * {
+        transform: scale(0.9);
+        transform-origin: center;
     }
     
     /* Override reverse ordering for mobile */
@@ -4650,6 +4657,13 @@ body {
         width: 100%;
         max-width: 100%;
         margin: 0 auto;
+        overflow: hidden; /* Prevent visual overflow */
+    }
+    
+    /* Scale down visual containers even more for extra small screens */
+    .step-visual > * {
+        transform: scale(0.8);
+        transform-origin: center;
     }
     
     /* Override any reverse class for small mobile */
@@ -4713,7 +4727,7 @@ body {
         font-size: 1.8rem;
     }
     
-    /* Demo Windows and Visuals */
+    /* Demo Windows and Visuals - Enhanced Mobile Scaling */
     .demo-window,
     .interaction-demo,
     .extraction-demo,
@@ -4721,89 +4735,210 @@ body {
     .ranking-demo {
         max-width: 100%;
         margin: 0 auto;
-        border-radius: 12px;
+        border-radius: 8px;
+        transform: scale(0.85); /* Scale down visuals for better mobile fit */
+        transform-origin: center;
     }
     
-    .window-title {
-        font-size: 0.85rem;
+    .window-header {
         padding: 8px 12px;
     }
     
-    .chat-area {
-        height: 180px;
-        padding: 10px;
+    .window-title {
+        font-size: 0.75rem;
+        padding: 6px 10px;
     }
     
+    .window-title i {
+        font-size: 0.9rem;
+    }
+    
+    .window-controls {
+        gap: 4px;
+    }
+    
+    .control {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .chat-area {
+        height: 140px;
+        padding: 8px;
+        gap: 8px;
+    }
+    
+    .chat-message {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+        border-radius: 12px;
+        max-width: 85%;
+    }
+    
+    .upload-zone {
+        padding: 15px;
+    }
+    
+    .upload-visual {
+        gap: 12px;
+    }
+    
+    .file-icon {
+        font-size: 2rem;
+    }
+    
+    .upload-text span {
+        font-size: 0.8rem;
+        margin-bottom: 6px;
+    }
+    
+    .upload-progress {
+        width: 150px;
+    }
+    
+    .progress-bar {
+        height: 6px;
+    }
+    
+    /* Data Extraction Demo Mobile */
     .data-transform {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
         align-items: center;
     }
     
     .raw-cv, .structured-data {
         width: 100%;
-        max-width: 250px;
+        max-width: 220px;
+        padding: 12px;
+        font-size: 0.8rem;
+    }
+    
+    .cv-header, .data-header {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+        padding-bottom: 6px;
+    }
+    
+    .cv-line {
+        height: 8px;
+        margin: 6px 0;
     }
     
     .transform-arrow {
         transform: rotate(90deg);
-        margin: 10px 0;
+        margin: 8px 0;
+        font-size: 1.5rem;
+    }
+    
+    .data-field {
+        padding: 6px 0;
+        font-size: 0.75rem;
+    }
+    
+    .field-label,
+    .field-value {
+        font-size: 0.75rem;
+    }
+    
+    /* AI Analysis Demo Mobile */
+    .ai-brain-visual {
+        padding: 20px;
+    }
+    
+    .brain-core i {
+        font-size: 2.5rem;
+    }
+    
+    .neural-node {
+        width: 8px;
+        height: 8px;
     }
     
     .analysis-metrics {
-        padding: 15px;
-        max-width: 280px;
+        padding: 12px;
+        max-width: 240px;
         margin: 0 auto;
+        gap: 8px;
+        grid-template-columns: 1fr;
     }
     
     .metric-item {
-        margin-bottom: 12px;
+        margin-bottom: 8px;
+        padding: 8px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 6px;
     }
     
     .metric-label {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+        margin-bottom: 4px;
     }
     
     .metric-value {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+        margin-bottom: 6px;
     }
     
+    .metric-bar {
+        height: 5px;
+        margin-top: 4px;
+    }
+    
+    /* Kanban Demo Mobile */
     .kanban-demo {
-        padding: 15px 10px;
+        padding: 12px 8px;
         max-width: 100%;
         overflow-x: auto;
+        transform: scale(0.9);
+        transform-origin: center;
+    }
+    
+    .kanban-header h4 {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
     }
     
     .kanban-board {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        min-width: 280px;
+        gap: 8px;
+        min-width: 240px;
     }
     
     .kanban-column {
-        padding: 8px;
-        min-height: 120px;
+        padding: 6px;
+        min-height: 100px;
+        border-radius: 6px;
     }
     
     .column-header {
-        font-size: 0.7rem;
-        padding-bottom: 5px;
+        font-size: 0.65rem;
+        padding-bottom: 4px;
+        margin-bottom: 6px;
+    }
+    
+    .column-count {
+        font-size: 0.6rem;
+        padding: 1px 4px;
     }
     
     .candidate-card {
-        padding: 6px 8px;
-        margin-bottom: 6px;
-        font-size: 0.65rem;
+        padding: 4px 6px;
+        margin-bottom: 4px;
+        font-size: 0.6rem;
+        border-radius: 4px;
     }
     
     .candidate-name {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
+        margin-bottom: 2px;
     }
     
     .ai-score {
-        font-size: 0.6rem;
-        padding: 2px 5px;
-        min-width: 30px;
+        font-size: 0.55rem;
+        padding: 1px 4px;
+        min-width: 25px;
+        border-radius: 3px;
     }
     
     /* Results Summary */
@@ -4953,6 +5088,161 @@ body {
         padding: 8px 16px;
         font-size: 0.85rem;
         max-width: 240px;
+    }
+    
+    /* Enhanced Visual Scaling for Extra Small Devices */
+    .demo-window,
+    .interaction-demo,
+    .extraction-demo,
+    .analysis-demo,
+    .ranking-demo {
+        transform: scale(0.75); /* Further scale down for very small screens */
+        transform-origin: center;
+        margin: -10px auto; /* Compensate for scale spacing */
+    }
+    
+    .chat-area {
+        height: 120px;
+        padding: 6px;
+    }
+    
+    .chat-message {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+        border-radius: 10px;
+    }
+    
+    .window-title {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+    
+    .window-title i {
+        font-size: 0.8rem;
+    }
+    
+    .upload-zone {
+        padding: 10px;
+    }
+    
+    .file-icon {
+        font-size: 1.5rem;
+    }
+    
+    .upload-text span {
+        font-size: 0.7rem;
+    }
+    
+    .upload-progress {
+        width: 120px;
+    }
+    
+    .progress-bar {
+        height: 4px;
+    }
+    
+    /* Data Transform Mobile Scaling */
+    .raw-cv, .structured-data {
+        max-width: 180px;
+        padding: 8px;
+    }
+    
+    .cv-header, .data-header {
+        font-size: 0.75rem;
+        margin-bottom: 6px;
+    }
+    
+    .cv-line {
+        height: 6px;
+        margin: 4px 0;
+    }
+    
+    .data-field {
+        padding: 4px 0;
+        font-size: 0.7rem;
+    }
+    
+    .transform-arrow {
+        font-size: 1.2rem;
+        margin: 6px 0;
+    }
+    
+    /* AI Brain Mobile Scaling */
+    .ai-brain-visual {
+        padding: 15px;
+    }
+    
+    .brain-core i {
+        font-size: 2rem;
+    }
+    
+    .neural-node {
+        width: 6px;
+        height: 6px;
+    }
+    
+    .analysis-metrics {
+        max-width: 200px;
+        padding: 8px;
+        gap: 6px;
+    }
+    
+    .metric-item {
+        padding: 6px;
+        margin-bottom: 6px;
+    }
+    
+    .metric-label {
+        font-size: 0.65rem;
+        margin-bottom: 3px;
+    }
+    
+    .metric-value {
+        font-size: 0.7rem;
+        margin-bottom: 4px;
+    }
+    
+    .metric-bar {
+        height: 4px;
+    }
+    
+    /* Kanban Board Extra Small Scaling */
+    .kanban-demo {
+        transform: scale(0.8);
+        padding: 8px 6px;
+        margin: -8px auto;
+    }
+    
+    .kanban-board {
+        min-width: 200px;
+        gap: 6px;
+    }
+    
+    .kanban-column {
+        padding: 4px;
+        min-height: 80px;
+    }
+    
+    .column-header {
+        font-size: 0.6rem;
+        margin-bottom: 4px;
+    }
+    
+    .candidate-card {
+        padding: 3px 4px;
+        margin-bottom: 3px;
+        font-size: 0.55rem;
+    }
+    
+    .candidate-name {
+        font-size: 0.6rem;
+        margin-bottom: 1px;
+    }
+    
+    .ai-score {
+        font-size: 0.5rem;
+        padding: 1px 3px;
+        min-width: 20px;
     }
 }
 
