@@ -3,6 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="EmployCase - AI-powered recruitment platform that streamlines hiring with intelligent CV parsing, candidate analysis, and automated interview assistance. Transform your HR process today." />
+    <meta name="keywords" content="AI recruitment, HR software, candidate screening, CV parsing, interview assistant, hiring platform, recruitment automation, talent acquisition" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="EmployCase" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://employcase.com/" />
+    <meta property="og:title" content="EmployCase - AI-Powered Recruitment Tool Platform" />
+    <meta property="og:description" content="Transform your hiring process with AI-powered recruitment tools. Streamline CV screening, candidate analysis, and interview management." />
+    <meta property="og:image" content="https://employcase.com/og-image.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://employcase.com/" />
+    <meta property="twitter:title" content="EmployCase - AI-Powered Recruitment Tool Platform" />
+    <meta property="twitter:description" content="Transform your hiring process with AI-powered recruitment tools. Streamline CV screening, candidate analysis, and interview management." />
+    <meta property="twitter:image" content="https://employcase.com/twitter-image.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://employcase.com/" />
+    
     <title data-i18n="hero.title">EmployCase - AI-Powered Recruitment Tool Platform</title>
     <link rel="stylesheet" href="styles.css" />
     <link
@@ -13,13 +35,47 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "EmployCase",
+      "description": "AI-powered recruitment platform that streamlines hiring with intelligent CV parsing, candidate analysis, and automated interview assistance.",
+      "url": "https://employcase.com",
+      "logo": "https://employcase.com/logo.png",
+      "foundingDate": "2024",
+      "industry": "Human Resources Technology",
+      "sameAs": [
+        "https://linkedin.com/company/employcase",
+        "https://twitter.com/employcase",
+        "https://instagram.com/employcase"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "availableLanguage": ["en", "es", "fr", "de", "it", "pt", "ru", "ar", "hi", "ja", "ko", "nl", "tr", "zh"]
+      },
+      "service": {
+        "@type": "Service",
+        "name": "AI-Powered Recruitment Platform",
+        "description": "Automated candidate screening, CV parsing, and interview assistance using artificial intelligence.",
+        "category": "Software",
+        "provider": {
+          "@type": "Organization",
+          "name": "EmployCase"
+        }
+      }
+    }
+    </script>
   </head>
   <body>
     <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
         <div class="nav-logo">
-          <i class="fas fa-briefcase"></i>
+          <i class="fas fa-briefcase" aria-label="EmployCase logo icon"></i>
           <span>EmployCase</span>
         </div>
         <div class="nav-menu">
@@ -38,10 +94,10 @@
       <div class="hero-container">
         <div class="hero-content">
           <div class="hero-text">
-            <h2 class="hero-title gradient-text" data-i18n="hero.title">
+            <h1 class="hero-title gradient-text" data-i18n="hero.title">
               Use Intelligent HR Tools<br />
    
-            </h2>
+            </h1>
             <p class="hero-subtitle" data-i18n="hero.subtitle">
               Use EmployCase as middleware in your recruitment process. Check out our smart interview assistant.
             </p>
@@ -55,7 +111,7 @@
             <div class="chat-container">
               <div class="chat-header">
                 <div class="chat-avatar">
-                  <i class="fas fa-robot"></i>
+                  <i class="fas fa-robot" aria-label="AI Assistant robot icon"></i>
                 </div>
                 <div class="chat-info">
                   <h3 data-i18n="hero.chatHeader">EmployCase Interview Assistant</h3>
@@ -72,7 +128,7 @@
               >
                 <div class="dropbox" id="dropbox">
                   <div class="dropbox-content">
-                    <i class="fas fa-cloud-upload-alt"></i>
+                    <i class="fas fa-cloud-upload-alt" aria-label="Upload cloud icon"></i>
                     <p data-i18n="hero.dropboxText">Drop your CV here or click to browse</p>
                     <span class="file-types" data-i18n="hero.fileTypes">PDF, DOC, DOCX files only</span>
                   </div>
@@ -93,7 +149,7 @@
                     id="uploadSuccess"
                     style="display: none"
                   >
-                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-check-circle" aria-label="Success checkmark icon"></i>
                     <span data-i18n="hero.uploadSuccess">CV uploaded successfully!</span>
                   </div>
                 </div>
@@ -105,7 +161,7 @@
                   placeholder="Type your response..."
                   disabled
                 />
-                <button><i class="fas fa-paper-plane"></i></button>
+                <button><i class="fas fa-paper-plane" aria-label="Send message icon"></i></button>
               </div>
             </div>
           </div>
@@ -119,7 +175,7 @@
         <h2 class="section-title" data-i18n="painPoints.title">Is This Your Hiring Reality?</h2>
         <div class="pain-grid">
           <div class="pain-card">
-            <i class="fas fa-file-alt"></i>
+            <i class="fas fa-file-alt" aria-label="Document stack icon"></i>
             <h3 data-i18n="painPoints.card1.title">Endless CVs, Limited Time</h3>
             <p data-i18n="painPoints.card1.description">
               HR teams bogged down manually sifting through hundreds of
@@ -127,7 +183,7 @@
             </p>
           </div>
           <div class="pain-card">
-            <i class="fas fa-puzzle-piece"></i>
+            <i class="fas fa-puzzle-piece" aria-label="Puzzle piece icon"></i>
             <h3 data-i18n="painPoints.card2.title">Inconsistent Information</h3>
             <p data-i18n="painPoints.card2.description">
               Candidate data scattered across countless CV formats, making
@@ -135,7 +191,7 @@
             </p>
           </div>
           <div class="pain-card">
-            <i class="fas fa-clock"></i>
+            <i class="fas fa-clock" aria-label="Clock icon"></i>
             <h3 data-i18n="painPoints.card3.title">Losing Top Talent</h3>
             <p data-i18n="painPoints.card3.description">
               Lengthy screening processes mean the best candidates are already
@@ -224,11 +280,11 @@
                 </p>
                 <div class="feature-highlights">
                   <div class="highlight-item">
-                    <i class="fas fa-comments"></i>
+                    <i class="fas fa-comments" aria-label="Natural language processing icon"></i>
                     <span data-i18n="workflow.step1.feature1">Natural Language Processing</span>
                   </div>
                   <div class="highlight-item">
-                    <i class="fas fa-upload"></i>
+                    <i class="fas fa-upload" aria-label="Document upload icon"></i>
                     <span data-i18n="workflow.step1.feature2">Document Processing</span>
                   </div>
                 </div>
@@ -307,11 +363,11 @@
                 </p>
                 <div class="feature-highlights">
                   <div class="highlight-item">
-                    <i class="fas fa-magic"></i>
+                    <i class="fas fa-magic" aria-label="AI magic wand icon"></i>
                     <span data-i18n="workflow.step2.feature1">AI-Powered Parsing</span>
                   </div>
                   <div class="highlight-item">
-                    <i class="fas fa-database"></i>
+                    <i class="fas fa-database" aria-label="Database icon"></i>
                     <span data-i18n="workflow.step2.feature2">Structured Output</span>
                   </div>
                 </div>
@@ -390,11 +446,11 @@
                 </p>
                 <div class="feature-highlights">
                   <div class="highlight-item">
-                    <i class="fas fa-brain"></i>
+                    <i class="fas fa-brain" aria-label="AI brain icon"></i>
                     <span data-i18n="workflow.step3.feature1">Machine Learning</span>
                   </div>
                   <div class="highlight-item">
-                    <i class="fas fa-chart-line"></i>
+                    <i class="fas fa-chart-line" aria-label="Analytics chart icon"></i>
                     <span data-i18n="workflow.step3.feature2">Multi-criteria Analysis</span>
                   </div>
                 </div>
@@ -483,7 +539,7 @@
                 </p>
                 <div class="feature-highlights">
                   <div class="highlight-item">
-                    <i class="fas fa-tools"></i>
+                    <i class="fas fa-tools" aria-label="Smart tools icon"></i>
                     <span data-i18n="workflow.step4.feature1">Smart tools</span>
                   </div>
 
@@ -520,7 +576,7 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-logo">
-            <i class="fas fa-briefcase"></i>
+            <i class="fas fa-briefcase" aria-label="EmployCase logo"></i>
             <span>EmployCase</span>
           </div>
          <div class="footer-links">
@@ -529,9 +585,9 @@
              <!--<a href="#">Contact Us</a>-->
           </div>
           <div class="footer-social">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-x"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Follow us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Follow us on X (Twitter)"><i class="fab fa-x"></i></a>
+            <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
         <div class="footer-bottom">
