@@ -79,6 +79,17 @@
       "leadership": "Leadership"
     }
   },
+  "candidateDemo": {
+    "name": "Marco Rossi",
+    "overallMatch": "Corrispondenza Generale",
+    "pros": "Pro",
+    "cons": "Contro",
+    "pro1": "8+ anni nel marketing SaaS",
+    "pro2": "Forti competenze di leadership",
+    "pro3": "Approccio basato sui dati",
+    "con1": "Esperienza limitata nel marketing mobile",
+    "con2": "Non specificato nel CV"
+  },
   "cta": {
     "title": "Pronto a Rivoluzionare le Tue Assunzioni?",
     "subtitle": "Vedi in prima persona come EmployCase può trasformare il tuo processo di reclutamento!",

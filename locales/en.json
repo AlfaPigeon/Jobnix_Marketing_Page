@@ -85,6 +85,17 @@
       "leadership": "Leadership"
     }
   },
+  "candidateDemo": {
+    "name": "Alex Chen",
+    "overallMatch": "Overall Match",
+    "pros": "Pros",
+    "cons": "Cons",
+    "pro1": "8+ years in SaaS marketing",
+    "pro2": "Strong leadership skills",
+    "pro3": "Data-driven approach",
+    "con1": "Limited mobile marketing experience",
+    "con2": "Not specified on CV"
+  },
   "cta": {
     "title": "Ready to Revolutionize Your Hiring?",
     "subtitle": "See firsthand how EmployCase can transform your recruitment process!",

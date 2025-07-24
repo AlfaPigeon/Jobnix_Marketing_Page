@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', 'Noto Sans', 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
@@ -2385,7 +2385,7 @@ body {
 
 .candidate-name {
     font-weight: 600;
-    color: #1e293b;
+    color: #6d88b3;
     font-size: 0.8rem;
 }
 
@@ -5615,4 +5615,194 @@ body {
 
 .analysis-column.cons li i {
  color: #ef4444;
+}
+
+/* Additional RTL Language Support */
+[data-lang="ar"] {
+    font-family: 'Noto Sans Arabic', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    direction: rtl;
+    text-align: right;
+}
+
+[data-lang="ar"] .nav-container {
+    flex-direction: row-reverse;
+}
+
+[data-lang="ar"] .nav-logo {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+[data-lang="ar"] .nav-menu {
+    flex-direction: row-reverse;
+}
+
+[data-lang="ar"] .language-selector {
+    margin-right: 0;
+    margin-left: 15px;
+}
+
+[data-lang="ar"] .hero-content {
+    text-align: right;
+}
+
+[data-lang="ar"] .hero-buttons {
+    justify-content: flex-end;
+}
+
+[data-lang="ar"] .hero-stats {
+    direction: rtl;
+}
+
+[data-lang="ar"] .step-content {
+    direction: rtl;
+}
+
+[data-lang="ar"] .step-content.reverse {
+    direction: ltr;
+}
+
+[data-lang="ar"] .pain-grid {
+    direction: rtl;
+}
+
+[data-lang="ar"] .benefits-grid {
+    direction: rtl;
+}
+
+[data-lang="ar"] .cta-buttons {
+    justify-content: center;
+    direction: rtl;
+}
+
+[data-lang="ar"] .footer-content {
+    direction: rtl;
+}
+
+[data-lang="ar"] .chat-messages {
+    direction: rtl;
+}
+
+[data-lang="ar"] .message.bot {
+    text-align: right;
+}
+
+[data-lang="ar"] .message.user {
+    text-align: left;
+}
+
+[data-lang="ar"] .message.bot .message-bubble {
+    border-radius: 20px 20px 5px 20px;
+}
+
+[data-lang="ar"] .message.user .message-bubble {
+    border-radius: 20px 20px 20px 5px;
+}
+
+/* Chinese text optimization */
+[data-lang="zh"] {
+    font-family: 'Noto Sans SC', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif !important;
+    line-height: 1.7;
+}
+
+/* Japanese text optimization */
+[data-lang="ja"] {
+    font-family: 'Noto Sans JP', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif !important;
+    line-height: 1.7;
+}
+
+/* Korean text optimization */
+[data-lang="ko"] {
+    font-family: 'Noto Sans KR', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif !important;
+    line-height: 1.7;
+}
+
+/* Hindi text optimization */
+[data-lang="hi"] {
+    font-family: 'Noto Sans Devanagari', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    line-height: 1.8;
+}
+
+/* Russian text optimization */
+[data-lang="ru"] {
+    font-family: 'Noto Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Turkish text optimization */
+[data-lang="tr"] {
+    font-family: 'Noto Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* European languages with special characters */
+[data-lang="fr"],
+[data-lang="de"],
+[data-lang="es"],
+[data-lang="it"],
+[data-lang="pt"],
+[data-lang="nl"] {
+    font-family: 'Inter', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Improve text rendering for all languages */
+* {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure proper character spacing for Asian languages */
+[data-lang="zh"],
+[data-lang="ja"],
+[data-lang="ko"] {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+[data-lang="zh"] p,
+[data-lang="ja"] p,
+[data-lang="ko"] p {
+    letter-spacing: 0.02em;
+}
+
+/* Fix issues with special characters in titles and headings */
+h1, h2, h3, h4, h5, h6,
+.hero-title,
+.section-title,
+.step-info h3 {
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0;
+}
+
+/* Ensure proper Unicode support */
+html {
+    font-synthesis: none;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+/* Fix potential encoding issues with pseudo-elements */
+.language-item::before,
+.analysis-details li::before,
+.customer-content li::before {
+    font-family: inherit;
+}
+
+/* Improve mobile font rendering for international characters */
+@media (max-width: 768px) {
+    [data-lang="zh"],
+    [data-lang="ja"],
+    [data-lang="ko"] {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    [data-lang="ar"] {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+    
+    [data-lang="hi"] {
+        font-size: 15px;
+        line-height: 1.9;
+    }
 }

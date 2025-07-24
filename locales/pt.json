@@ -79,6 +79,17 @@
       "leadership": "Liderança"
     }
   },
+  "candidateDemo": {
+    "name": "João Silva",
+    "overallMatch": "Correspondência Geral",
+    "pros": "Prós",
+    "cons": "Contras",
+    "pro1": "8+ anos em marketing SaaS",
+    "pro2": "Fortes habilidades de liderança",
+    "pro3": "Abordagem baseada em dados",
+    "con1": "Experiência limitada em marketing móvel",
+    "con2": "Não especificado no CV"
+  },
   "cta": {
     "title": "Pronto para Revolucionar sua Contratação?",
     "subtitle": "Veja em primeira mão como o EmployCase pode transformar seu processo de recrutamento!",

@@ -79,6 +79,17 @@
       "leadership": "Führung"
     }
   },
+  "candidateDemo": {
+    "name": "Thomas Müller",
+    "overallMatch": "Gesamtübereinstimmung",
+    "pros": "Vorteile",
+    "cons": "Nachteile",
+    "pro1": "8+ Jahre im SaaS-Marketing",
+    "pro2": "Starke Führungskompetenzen",
+    "pro3": "Datengetriebener Ansatz",
+    "con1": "Begrenzte Mobile-Marketing-Erfahrung",
+    "con2": "Nicht im Lebenslauf angegeben"
+  },
   "cta": {
     "title": "Bereit, Ihre Einstellung zu Revolutionieren?",
     "subtitle": "Sehen Sie aus erster Hand, wie EmployCase Ihren Rekrutierungsprozess transformieren kann!",

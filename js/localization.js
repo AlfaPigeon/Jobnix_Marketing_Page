@@ -47,8 +47,14 @@ class LocalizationManager {
 
   async loadConfig() {
     try {
-      const response = await fetch('./locales/config.json');
-      this.config = await response.json();
+      const response = await fetch('./locales/config.json', {
+        headers: {
+          'Accept': 'application/json; charset=utf-8',
+          'Content-Type': 'application/json; charset=utf-8'
+        }
+      });
+      const text = await response.text();
+      this.config = JSON.parse(text);
     } catch (error) {
       console.error('Failed to load localization config:', error);
       throw error;
@@ -164,11 +170,19 @@ class LocalizationManager {
 
   async fetchTranslations(languageCode) {
     try {
-      const response = await fetch(`./locales/${languageCode}.json`);
+      const response = await fetch(`./locales/${languageCode}.json`, {
+        headers: {
+          'Accept': 'application/json; charset=utf-8',
+          'Content-Type': 'application/json; charset=utf-8'
+        }
+      });
       if (!response.ok) {
         throw new Error(`Failed to load ${languageCode} translations`);
       }
-      this.translations[languageCode] = await response.json();
+      
+      // Ensure proper text encoding
+      const text = await response.text();
+      this.translations[languageCode] = JSON.parse(text);
     } catch (error) {
       console.error(`Failed to load translations for ${languageCode}:`, error);
       throw error;
@@ -195,6 +209,12 @@ class LocalizationManager {
     const isRTL = this.config.rtlLanguages?.includes(this.currentLanguage);
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
     document.documentElement.lang = this.currentLanguage;
+    
+    // Set language-specific data attribute for CSS styling
+    document.documentElement.setAttribute('data-lang', this.currentLanguage);
+    
+    // Apply language-specific font and styling
+    this.applyLanguageSpecificStyling();
 
     // Translate all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -369,6 +389,52 @@ class LocalizationManager {
     // Update chat conversation for the demo
     if (window.updateChatLanguage && typeof window.updateChatLanguage === 'function') {
       window.updateChatLanguage(this.currentLanguage);
+    }
+  }
+
+  applyLanguageSpecificStyling() {
+    // Remove any existing language-specific body classes
+    document.body.classList.remove(
+      'lang-ar', 'lang-zh', 'lang-ja', 'lang-ko', 'lang-hi', 'lang-ru', 'lang-tr'
+    );
+    
+    // Add current language class
+    document.body.classList.add(`lang-${this.currentLanguage}`);
+    
+    // Handle text direction
+    const isRTL = this.config.rtlLanguages?.includes(this.currentLanguage);
+    if (isRTL) {
+      document.body.classList.add('rtl');
+    } else {
+      document.body.classList.remove('rtl');
+    }
+    
+    // Apply language-specific optimizations
+    switch (this.currentLanguage) {
+      case 'ar':
+        // Arabic-specific adjustments
+        document.body.style.fontFeatureSettings = '"kern" 1';
+        break;
+      case 'zh':
+        // Chinese-specific adjustments
+        document.body.style.fontFeatureSettings = '"kern" 1, "liga" 0';
+        break;
+      case 'ja':
+        // Japanese-specific adjustments
+        document.body.style.fontFeatureSettings = '"kern" 1, "liga" 0';
+        break;
+      case 'ko':
+        // Korean-specific adjustments
+        document.body.style.fontFeatureSettings = '"kern" 1, "liga" 0';
+        break;
+      case 'hi':
+        // Hindi-specific adjustments
+        document.body.style.fontFeatureSettings = '"kern" 1, "liga" 1';
+        break;
+      default:
+        // Default for Latin-based languages
+        document.body.style.fontFeatureSettings = '"kern" 1, "liga" 1';
+        break;
     }
   }
 

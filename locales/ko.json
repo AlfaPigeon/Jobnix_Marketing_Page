@@ -80,6 +80,17 @@
       "leadership": "리더십"
     }
   },
+  "candidateDemo": {
+    "name": "김민수",
+    "overallMatch": "전체 매치",
+    "pros": "장점",
+    "cons": "단점",
+    "pro1": "SaaS 마케팅 8년 이상",
+    "pro2": "강한 리더십 스킬",
+    "pro3": "데이터 기반 접근법",
+    "con1": "모바일 마케팅 경험 제한적",
+    "con2": "이력서에 명시되지 않음"
+  },
   "cta": {
     "title": "채용을 혁신할 준비가 되셨나요?",
     "subtitle": "EmployCase가 어떻게 채용 프로세스를 변화시킬 수 있는지 직접 확인하세요!",

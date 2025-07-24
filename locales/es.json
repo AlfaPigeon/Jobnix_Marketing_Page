@@ -85,6 +85,17 @@
       "leadership": "Liderazgo"
     }
   },
+  "candidateDemo": {
+    "name": "Carlos Rodríguez",
+    "overallMatch": "Coincidencia General",
+    "pros": "Pros",
+    "cons": "Contras",
+    "pro1": "8+ años en marketing SaaS",
+    "pro2": "Fuertes habilidades de liderazgo",
+    "pro3": "Enfoque basado en datos",
+    "con1": "Experiencia limitada en marketing móvil",
+    "con2": "No especificado en el CV"
+  },
   "cta": {
     "title": "¿Listo para Revolucionar tu Contratación?",
     "subtitle": "¡Ve de primera mano cómo EmployCase puede transformar tu proceso de reclutamiento!",

@@ -79,6 +79,17 @@
       "leadership": "领导力"
     }
   },
+  "candidateDemo": {
+    "name": "李伟",
+    "overallMatch": "整体匹配",
+    "pros": "优点",
+    "cons": "缺点",
+    "pro1": "SaaS营销8年以上经验",
+    "pro2": "强大的领导技能",
+    "pro3": "数据驱动的方法",
+    "con1": "移动营销经验有限",
+    "con2": "简历中未指明"
+  },
   "cta": {
     "title": "准备好革新您的招聘吗？",
     "subtitle": "亲身体验EmployCase如何改变您的招聘流程！",

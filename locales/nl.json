@@ -80,6 +80,17 @@
       "leadership": "Leiderschap"
     }
   },
+  "candidateDemo": {
+    "name": "Jan de Vries",
+    "overallMatch": "Algemene Match",
+    "pros": "Voordelen",
+    "cons": "Nadelen",
+    "pro1": "8+ jaar in SaaS marketing",
+    "pro2": "Sterke leiderschapsvaardigheden",
+    "pro3": "Data-gedreven aanpak",
+    "con1": "Beperkte mobiele marketing ervaring",
+    "con2": "Niet gespecificeerd op CV"
+  },
   "cta": {
     "title": "Klaar om Uw Werving te Revolutioneren?",
     "subtitle": "Zie uit de eerste hand hoe EmployCase uw wervingsproces kan transformeren!",
