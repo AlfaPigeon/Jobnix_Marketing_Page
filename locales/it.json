@@ -67,6 +67,11 @@
       "education": "Istruzione:",
       "leadership": "Leadership:"
     },
+    "animation": {
+      "welcomeMessage": "Benvenuto! Sono qui per aiutarti con il tuo processo di candidatura.",
+      "userInterest": "Ciao! Sono interessato alla posizione di Senior Developer.",
+      "uploadRequest": "Ottimo! Per favore carica il tuo CV e lo analizzerò per te."
+    },
     "metrics": {
       "skillsMatch": "Corrispondenza Competenze",
       "experience": "Esperienza",
@@ -82,8 +87,15 @@
   "footer": {
     "copyright": "© 2025 EmployCase. Tutti i Diritti Riservati."
   },
+  "modal": {
+    "demoRequested": "Demo Richiesta!",
+    "thankYou": "Grazie per il tuo interesse in EmployCase. Il nostro team ti contatterà entro 24 ore per programmare la tua demo personalizzata.",
+    "close": "Chiudi",
+    "sending": "Invio in corso..."
+  },
   "chat": {
     "greeting": "Ciao! Sono qui per aiutarti con la tua candidatura. Potresti caricare il tuo CV per favore?",
+    "userIntroduction": "Ciao, sono Giulia Rossi",
     "cvRequest": "Dovrò prima rivedere il tuo CV. Per favore caricalo usando il pulsante qui sotto.",
     "processing": "Ottimo! Fammi elaborare il tuo CV...",
     "analysisComplete": "Perfetto! Posso vedere che hai una vasta esperienza nel marketing digitale. Fammi farti alcune domande per capire meglio il tuo background.",

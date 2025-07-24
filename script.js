@@ -86,7 +86,7 @@ function initChatSimulation() {
       },
       {
         type: "user",
-        message: "Hi, I'm Sarah Johnson",
+        message: window.i18n ? window.i18n.getText('chat.userIntroduction') : "Hi, I'm Sarah Johnson",
         delay: 2500,
       },
       {
@@ -294,7 +294,8 @@ function initChatSimulation() {
       }
 
       progressFill.style.width = progress + "%";
-      progressText.textContent = `Uploading... ${Math.floor(progress)}%`;
+      const uploadingText = window.i18n ? window.i18n.getText('hero.uploadProgress') : "Uploading...";
+      progressText.textContent = `${uploadingText} ${Math.floor(progress)}%`;
 
       // Add pulse animation during upload
       if (progress < 100) {
@@ -622,15 +623,15 @@ function initWorkflowAnimation() {
     const messages = [
       {
         type: "bot",
-        text: "Welcome! I'm here to help with your application process.",
+        text: window.i18n ? window.i18n.getText('workflow.animation.welcomeMessage') : "Welcome! I'm here to help with your application process.",
       },
       {
         type: "user",
-        text: "Hi! I'm interested in the Senior Developer position.",
+        text: window.i18n ? window.i18n.getText('workflow.animation.userInterest') : "Hi! I'm interested in the Senior Developer position.",
       },
       {
         type: "bot",
-        text: "Great! Please upload your CV and I'll analyze it for you.",
+        text: window.i18n ? window.i18n.getText('workflow.animation.uploadRequest') : "Great! Please upload your CV and I'll analyze it for you.",
       },
     ];
 
@@ -1022,16 +1023,21 @@ function showDemoModal() {
 
     // Simulate form submission
     const submitBtn = modal.querySelector('button[type="submit"]');
-    submitBtn.textContent = "Sending...";
+    const sendingText = window.i18n ? window.i18n.getText('modal.sending') : "Sending...";
+    submitBtn.textContent = sendingText;
     submitBtn.disabled = true;
 
     setTimeout(() => {
+      const demoRequestedText = window.i18n ? window.i18n.getText('modal.demoRequested') : "Demo Requested!";
+      const thankYouText = window.i18n ? window.i18n.getText('modal.thankYou') : "Thank you for your interest in EmployCase. Our team will contact you within 24 hours to schedule your personalized demo.";
+      const closeText = window.i18n ? window.i18n.getText('modal.close') : "Close";
+      
       modal.innerHTML = `
                 <div style="text-align: center;">
                     <i class="fas fa-check-circle" style="font-size: 4rem; color: #10b981; margin-bottom: 20px;"></i>
-                    <h2 style="margin-bottom: 10px; color: #1e293b;">Demo Requested!</h2>
-                    <p style="color: #64748b; margin-bottom: 30px;">Thank you for your interest in EmployCase. Our team will contact you within 24 hours to schedule your personalized demo.</p>
-                    <button class="close-modal" style="padding: 12px 24px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Close</button>
+                    <h2 style="margin-bottom: 10px; color: #1e293b;">${demoRequestedText}</h2>
+                    <p style="color: #64748b; margin-bottom: 30px;">${thankYouText}</p>
+                    <button class="close-modal" style="padding: 12px 24px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">${closeText}</button>
                 </div>
             `;
 

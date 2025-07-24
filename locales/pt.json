@@ -67,6 +67,11 @@
       "education": "Educação:",
       "leadership": "Liderança:"
     },
+    "animation": {
+      "welcomeMessage": "Bem-vindo! Estou aqui para ajudar com seu processo de candidatura.",
+      "userInterest": "Olá! Estou interessado na posição de Desenvolvedor Senior.",
+      "uploadRequest": "Ótimo! Por favor carregue seu currículo e eu o analisarei para você."
+    },
     "metrics": {
       "skillsMatch": "Correspondência de Habilidades",
       "experience": "Experiência",
@@ -82,8 +87,15 @@
   "footer": {
     "copyright": "© 2025 EmployCase. Todos os Direitos Reservados."
   },
+  "modal": {
+    "demoRequested": "Demo Solicitada!",
+    "thankYou": "Obrigado pelo seu interesse no EmployCase. Nossa equipe entrará em contato dentro de 24 horas para agendar sua demo personalizada.",
+    "close": "Fechar",
+    "sending": "Enviando..."
+  },
   "chat": {
     "greeting": "Olá! Estou aqui para ajudar com sua candidatura. Você poderia fazer upload do seu currículo, por favor?",
+    "userIntroduction": "Olá, sou Ana Silva",
     "cvRequest": "Vou precisar revisar seu currículo primeiro. Por favor, faça o upload usando o botão abaixo.",
     "processing": "Ótimo! Deixe-me processar seu currículo...",
     "analysisComplete": "Perfeito! Posso ver que você tem vasta experiência em marketing digital. Deixe-me fazer algumas perguntas para entender melhor seu background.",

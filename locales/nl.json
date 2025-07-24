@@ -84,6 +84,7 @@
   },
   "chat": {
     "greeting": "Hallo! Ik ben hier om te helpen met uw sollicitatie. Kunt u uw CV uploaden alstublieft?",
+    "userIntroduction": "Hallo, ik ben Emma de Jong",
     "cvRequest": "Ik moet eerst uw CV bekijken. Upload het alstublieft met de knop hieronder.",
     "processing": "Geweldig! Laat me uw CV verwerken...",
     "analysisComplete": "Perfect! Ik kan zien dat u uitgebreide ervaring heeft in digitale marketing. Laat me u een paar vragen stellen om uw achtergrond beter te begrijpen.",

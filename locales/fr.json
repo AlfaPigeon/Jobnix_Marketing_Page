@@ -67,6 +67,11 @@
       "education": "Éducation :",
       "leadership": "Leadership :"
     },
+    "animation": {
+      "welcomeMessage": "Bienvenue ! Je suis là pour vous aider dans votre processus de candidature.",
+      "userInterest": "Bonjour ! Je suis intéressé par le poste de Développeur Senior.",
+      "uploadRequest": "Parfait ! Veuillez télécharger votre CV et je l'analyserai pour vous."
+    },
     "metrics": {
       "skillsMatch": "Correspondance des Compétences",
       "experience": "Expérience",
@@ -82,8 +87,15 @@
   "footer": {
     "copyright": "© 2025 EmployCase. Tous Droits Réservés."
   },
+  "modal": {
+    "demoRequested": "Démo Demandée !",
+    "thankYou": "Merci pour votre intérêt envers EmployCase. Notre équipe vous contactera dans les 24 heures pour programmer votre démo personnalisée.",
+    "close": "Fermer",
+    "sending": "Envoi en cours..."
+  },
   "chat": {
     "greeting": "Bonjour ! Je suis là pour vous aider avec votre candidature. Pourriez-vous télécharger votre CV s'il vous plaît ?",
+    "userIntroduction": "Bonjour, je suis Marie Dubois",
     "cvRequest": "Je vais d'abord devoir examiner votre CV. Veuillez le télécharger en utilisant le bouton ci-dessous.",
     "processing": "Parfait ! Laissez-moi traiter votre CV...",
     "analysisComplete": "Parfait ! Je peux voir que vous avez une vaste expérience en marketing digital. Laissez-moi vous poser quelques questions pour mieux comprendre votre parcours.",

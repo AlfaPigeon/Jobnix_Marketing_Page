@@ -84,6 +84,7 @@
   },
   "chat": {
     "greeting": "Merhaba! Başvurunuzla ilgili yardımcı olmak için buradayım. Lütfen CV'nizi yükler misiniz?",
+    "userIntroduction": "Merhaba, ben Ayşe Demir",
     "cvRequest": "Önce CV'nizi incelemem gerekecek. Lütfen aşağıdaki butonu kullanarak yükleyin.",
     "processing": "Harika! CV'nizi işlememe izin verin...",
     "analysisComplete": "Mükemmel! Dijital pazarlama alanında geniş deneyiminiz olduğunu görebiliyorum. Geçmişinizi daha iyi anlamak için size birkaç soru sormama izin verin.",

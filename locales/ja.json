@@ -3,16 +3,24 @@
     "requestDemo": "デモをリクエスト"
   },
   "hero": {
-    "title": "スマートなHRツールを使用",
-    "subtitle": "採用プロセスのミドルウェアとしてEmployCaseを使用してください。スマートな面接アシスタントをご覧ください。",
-    "requestDemo": "デモをリクエスト",
-    "chatHeader": "EmployCase面接アシスタント",
-    "chatStatus": "オンライン",
-    "chatPlaceholder": "回答を入力してください...",
-    "dropboxText": "履歴書をここにドロップするかクリックして参照",
-    "fileTypes": "PDF、DOC、DOCXファイルのみ",
-    "uploadProgress": "アップロード中...",
-    "uploadSuccess": "履歴書のアップロードが完了しました！"
+      "dataFields": {
+      "name": "名前：",
+      "experience": "経験：",
+      "skills": "スキル：",
+      "education": "学歴：",
+      "leadership": "リーダーシップ："
+    },
+    "animation": {
+      "welcomeMessage": "ようこそ！応募プロセスのお手伝いをします。",
+      "userInterest": "こんにちは！シニアデベロッパーのポジションに興味があります。",
+      "uploadRequest": "素晴らしい！履歴書をアップロードしていただければ、分析いたします。"
+    }
+  },
+  "modal": {
+    "demoRequested": "デモがリクエストされました！",
+    "thankYou": "EmployCaseへのご関心をありがとうございます。当社のチームが24時間以内にご連絡し、パーソナライズされたデモをスケジュールいたします。",
+    "close": "閉じる",
+    "sending": "送信中..."
   },
   "painPoints": {
     "title": "これがあなたの採用の現実ですか？",
@@ -84,6 +92,7 @@
   },
   "chat": {
     "greeting": "こんにちは！あなたの応募をお手伝いします。履歴書をアップロードしていただけますか？",
+    "userIntroduction": "こんにちは、田中美咲です",
     "cvRequest": "まず、あなたの履歴書を確認する必要があります。下のボタンを使ってアップロードしてください。",
     "processing": "素晴らしい！あなたの履歴書を処理させてください...",
     "analysisComplete": "完璧です！デジタルマーケティングで豊富な経験をお持ちであることがわかります。あなたの背景をよりよく理解するためにいくつか質問させてください。",

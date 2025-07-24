@@ -67,6 +67,11 @@
       "education": "教育：",
       "leadership": "领导力："
     },
+    "animation": {
+      "welcomeMessage": "欢迎！我来帮助您的申请流程。",
+      "userInterest": "您好！我对高级开发者职位感兴趣。",
+      "uploadRequest": "太好了！请上传您的简历，我将为您分析。"
+    },
     "metrics": {
       "skillsMatch": "技能匹配",
       "experience": "经验",
@@ -82,8 +87,15 @@
   "footer": {
     "copyright": "© 2025 EmployCase. 保留所有权利。"
   },
+  "modal": {
+    "demoRequested": "演示已请求！",
+    "thankYou": "感谢您对EmployCase的关注。我们的团队将在24小时内联系您，安排您的个性化演示。",
+    "close": "关闭",
+    "sending": "发送中..."
+  },
   "chat": {
     "greeting": "您好！我来帮助您的申请。请您上传简历好吗？",
+    "userIntroduction": "您好，我是李小美",
     "cvRequest": "我需要先查看您的简历。请使用下面的按钮上传。",
     "processing": "太好了！让我处理您的简历...",
     "analysisComplete": "完美！我可以看到您在数字营销方面有丰富的经验。让我问您几个问题以更好地了解您的背景。",

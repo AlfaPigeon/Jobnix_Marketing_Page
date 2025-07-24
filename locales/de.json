@@ -67,6 +67,11 @@
       "education": "Bildung:",
       "leadership": "Führung:"
     },
+    "animation": {
+      "welcomeMessage": "Willkommen! Ich bin hier, um Ihnen bei Ihrem Bewerbungsprozess zu helfen.",
+      "userInterest": "Hallo! Ich interessiere mich für die Position des Senior Entwicklers.",
+      "uploadRequest": "Großartig! Bitte laden Sie Ihren Lebenslauf hoch und ich werde ihn für Sie analysieren."
+    },
     "metrics": {
       "skillsMatch": "Fähigkeiten-Match",
       "experience": "Erfahrung",
@@ -82,8 +87,15 @@
   "footer": {
     "copyright": "© 2025 EmployCase. Alle Rechte Vorbehalten."
   },
+  "modal": {
+    "demoRequested": "Demo Angefordert!",
+    "thankYou": "Vielen Dank für Ihr Interesse an EmployCase. Unser Team wird Sie innerhalb von 24 Stunden kontaktieren, um Ihre personalisierte Demo zu planen.",
+    "close": "Schließen",
+    "sending": "Wird gesendet..."
+  },
   "chat": {
     "greeting": "Hallo! Ich bin hier, um Ihnen bei Ihrer Bewerbung zu helfen. Könnten Sie bitte Ihren Lebenslauf hochladen?",
+    "userIntroduction": "Hallo, ich bin Anna Müller",
     "cvRequest": "Ich muss zuerst Ihren Lebenslauf überprüfen. Bitte laden Sie ihn mit dem Button unten hoch.",
     "processing": "Großartig! Lassen Sie mich Ihren Lebenslauf verarbeiten...",
     "analysisComplete": "Perfekt! Ich kann sehen, dass Sie umfangreiche Erfahrung im digitalen Marketing haben. Lassen Sie mich Ihnen ein paar Fragen stellen, um Ihren Hintergrund besser zu verstehen.",

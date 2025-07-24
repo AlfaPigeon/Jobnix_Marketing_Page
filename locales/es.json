@@ -67,6 +67,11 @@
       "education": "Educación:",
       "leadership": "Liderazgo:"
     },
+    "animation": {
+      "welcomeMessage": "¡Bienvenido! Estoy aquí para ayudarte con tu proceso de solicitud.",
+      "userInterest": "¡Hola! Estoy interesado en el puesto de Desarrollador Senior.",
+      "uploadRequest": "¡Genial! Por favor sube tu CV y lo analizaré para ti."
+    },
     "metrics": {
       "skillsMatch": "Coincidencia de Habilidades",
       "experience": "Experiencia",
@@ -82,8 +87,15 @@
   "footer": {
     "copyright": "© 2025 EmployCase. Todos los Derechos Reservados."
   },
+  "modal": {
+    "demoRequested": "¡Demo Solicitada!",
+    "thankYou": "Gracias por tu interés en EmployCase. Nuestro equipo te contactará dentro de 24 horas para programar tu demo personalizada.",
+    "close": "Cerrar",
+    "sending": "Enviando..."
+  },
   "chat": {
     "greeting": "¡Hola! Estoy aquí para ayudar con tu solicitud. ¿Podrías subir tu CV por favor?",
+    "userIntroduction": "Hola, soy Carmen García",
     "cvRequest": "Necesitaré revisar tu CV primero. Por favor súbelo usando el botón de abajo.",
     "processing": "¡Genial! Déjame procesar tu CV...",
     "analysisComplete": "¡Perfecto! Puedo ver que tienes amplia experiencia en marketing digital. Déjame hacerte algunas preguntas para entender mejor tu experiencia.",
