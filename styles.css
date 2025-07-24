@@ -5442,3 +5442,177 @@ body {
         flex-direction: column;
     }
 }
+/* Step 3: Candidate Analysis Demo */
+.candidate-analysis-demo {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ perspective: 1000px;
+}
+
+
+.candidate-card-container {
+ width: 320px;
+ height: 400px;
+ position: relative;
+ cursor: pointer;
+}
+
+
+.candidate-card-inner {
+ width: 100%;
+ height: 100%;
+ transform-style: preserve-3d;
+ transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+ position: relative;
+}
+
+
+.candidate-card-container.flipped .candidate-card-inner {
+ transform: rotateY(180deg);
+}
+
+
+.candidate-card-front,
+.candidate-card-back {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ backface-visibility: hidden;
+ border-radius: 20px;
+ background: rgba(255, 255, 255, 0.05);
+ border: 1px solid rgba(255, 255, 255, 0.2);
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ padding: 20px;
+ text-align: center;
+}
+
+
+.candidate-card-front {
+ z-index: 2;
+ transform: rotateY(0deg);
+}
+
+
+.candidate-card-back {
+ transform: rotateY(180deg);
+ padding: 30px;
+}
+
+
+.candidate-avatar {
+ width: 120px;
+ height: 120px;
+ border-radius: 50%;
+ background: linear-gradient(135deg, #2563eb, #8b5cf6);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 60px;
+ color: white;
+ margin-bottom: 20px;
+ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.candidate-info .candidate-name {
+ font-size: 1.5rem;
+ font-weight: 700;
+ margin-bottom: 5px;
+}
+
+
+.candidate-info .candidate-title {
+ font-size: 1rem;
+ color: rgba(255, 255, 255, 0.7);
+ margin-bottom: 25px;
+}
+
+
+.overall-assessment {
+ border-top: 1px solid rgba(255, 255, 255, 0.2);
+ padding-top: 20px;
+ width: 100%;
+}
+
+
+.assessment-score {
+ font-size: 2.5rem;
+ font-weight: 700;
+ color: #10b981;
+}
+
+
+.assessment-label {
+ font-size: 0.9rem;
+ color: rgba(255, 255, 255, 0.7);
+}
+
+
+.analysis-details {
+ display: flex;
+ justify-content: space-between;
+ width: 100%;
+ height: 100%;
+}
+
+
+.analysis-column {
+ width: 48%;
+ text-align: left;
+}
+
+
+.column-title {
+ font-size: 1.1rem;
+ font-weight: 600;
+ margin-bottom: 15px;
+ display: flex;
+ align-items: center;
+ gap: 8px;
+}
+
+
+.analysis-column.pros .column-title {
+ color: #22c55e;
+}
+
+
+.analysis-column.cons .column-title {
+ color: #ef4444;
+}
+
+
+.analysis-details ul {
+ list-style: none;
+ padding: 0;
+ margin: 0;
+}
+
+
+.analysis-details li {
+ font-size: 0.85rem;
+ color: rgba(255, 255, 255, 0.8);
+ margin-bottom: 10px;
+ display: flex;
+ align-items: flex-start;
+ gap: 8px;
+}
+
+
+.analysis-details li i {
+ margin-top: 3px;
+}
+
+
+.analysis-column.pros li i {
+ color: #22c55e;
+}
+
+
+.analysis-column.cons li i {
+ color: #ef4444;
+}

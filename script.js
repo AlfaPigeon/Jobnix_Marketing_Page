@@ -21,6 +21,7 @@ function initializeApp() {
   initSmoothScrolling();
   initScrollAnimations();
   initCTAButtons();
+  initCandidateCardAnimation();
 }
 
 // Mobile Navigation
@@ -1174,4 +1175,45 @@ const heroObserver = new IntersectionObserver((entries) => {
 const heroStats = document.querySelector(".hero-stats");
 if (heroStats) {
   heroObserver.observe(heroStats);
+}
+
+// Candidate Card Animation
+function initCandidateCardAnimation() {
+ const candidateCard = document.getElementById("candidateCard");
+ if (candidateCard) {
+   const observer = new IntersectionObserver(
+     (entries) => {
+       entries.forEach((entry) => {
+         if (entry.isIntersecting) {
+           // Flip the card when it comes into view
+           setTimeout(() => {
+             candidateCard.classList.add("flipped");
+           }, 1000); // Delay before flipping
+
+
+           // Flip back after a few seconds
+           setTimeout(() => {
+             candidateCard.classList.remove("flipped");
+           }, 4000); // Duration to show the back
+         } else {
+           // Reset when out of view
+           candidateCard.classList.remove("flipped");
+         }
+       });
+     },
+     { threshold: 0.6 }
+   );
+
+
+   observer.observe(candidateCard);
+
+
+   // Add hover effect for desktop
+   candidateCard.addEventListener("mouseenter", () => {
+     candidateCard.classList.add("flipped");
+   });
+   candidateCard.addEventListener("mouseleave", () => {
+     candidateCard.classList.remove("flipped");
+   });
+ }
 }
