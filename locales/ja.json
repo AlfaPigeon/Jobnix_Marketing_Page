@@ -3,7 +3,17 @@
     "requestDemo": "デモをリクエスト"
   },
   "hero": {
-      "dataFields": {
+    "title": "インテリジェントなHRツールを使用",
+    "subtitle": "採用プロセスのミドルウェアとしてEmployCaseを使用してください。私たちのスマートな面接アシスタントをご覧ください。",
+    "requestDemo": "デモをリクエスト",
+    "chatHeader": "EmployCase面接アシスタント",
+    "chatStatus": "オンライン",
+    "chatPlaceholder": "回答を入力してください...",
+    "dropboxText": "履歴書をここにドロップするか、クリックして参照",
+    "fileTypes": "PDF、DOC、DOCXファイルのみ",
+    "uploadProgress": "アップロード中...",
+    "uploadSuccess": "履歴書が正常にアップロードされました！",
+    "dataFields": {
       "name": "名前：",
       "experience": "経験：",
       "skills": "スキル：",
