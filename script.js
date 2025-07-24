@@ -982,10 +982,31 @@ function showDemoModal() {
     `;
 
   modal.innerHTML = `
-    <iframe class="airtable-embed" src="https://airtable.com/embed/appwNHbSZ3J4G9oE0/pagtkK4djKlZfeKLL/form" frameborder="0" onmousewheel="" width="100%" height="700" style="background: transparent; border: 1px solid #ccc;"></iframe>
+    <div style="position: relative; width: 100%; height: 700px;">
+      <div class="loading-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: white; display: flex; align-items: center; justify-content: center; z-index: 1;">
+        <div style="text-align: center;">
+          <div class="spinner" style="width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #2563eb; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 16px;"></div>
+          <p style="color: #666; margin: 0; font-size: 14px;">Loading form...</p>
+        </div>
+      </div>
+      <iframe class="airtable-embed" src="https://airtable.com/embed/appwNHbSZ3J4G9oE0/pagtkK4djKlZfeKLL/form" frameborder="0" onmousewheel="" width="100%" height="700" style="background: transparent; border: 1px solid #ccc;"></iframe>
+    </div>
     `;
   overlay.appendChild(modal);
   document.body.appendChild(overlay);
+
+  // Hide loading overlay when iframe loads
+  const iframe = modal.querySelector('.airtable-embed');
+  const loadingOverlay = modal.querySelector('.loading-overlay');
+  
+  iframe.addEventListener('load', () => {
+    if (loadingOverlay) {
+      loadingOverlay.style.opacity = '0';
+      setTimeout(() => {
+        loadingOverlay.style.display = 'none';
+      }, 300);
+    }
+  });
 
   // Add styles for animations
   const style = document.createElement("style");
@@ -999,6 +1020,13 @@ function showDemoModal() {
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .loading-overlay {
+            transition: opacity 0.3s ease;
         }
     `;
   document.head.appendChild(style);
