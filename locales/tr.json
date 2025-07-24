@@ -14,6 +14,12 @@
     "uploadProgress": "Yükleniyor...",
     "uploadSuccess": "CV başarıyla yüklendi!"
   },
+  "modal": {
+    "demoRequested": "Demo Talep Edildi!",
+    "thankYou": "EmployCase'e olan ilginiz için teşekkür ederiz. Ekibimiz kişiselleştirilmiş demonuzu planlamak için 24 saat içinde sizinle iletişime geçecek.",
+    "close": "Kapat",
+    "sending": "Gönderiliyor..."
+  },
   "painPoints": {
     "title": "İşe Alım Gerçeğiniz Bu mu?",
     "card1": {

@@ -14,6 +14,12 @@
     "uploadProgress": "업로드 중...",
     "uploadSuccess": "이력서가 성공적으로 업로드되었습니다!"
   },
+  "modal": {
+    "demoRequested": "데모가 요청되었습니다!",
+    "thankYou": "EmployCase에 관심을 가져주셔서 감사합니다. 저희 팀이 24시간 내에 연락드려 맞춤형 데모 일정을 잡겠습니다.",
+    "close": "닫기",
+    "sending": "전송 중..."
+  },
   "painPoints": {
     "title": "이것이 당신의 채용 현실입니까?",
     "card1": {

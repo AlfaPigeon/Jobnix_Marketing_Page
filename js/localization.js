@@ -105,7 +105,7 @@ class LocalizationManager {
         const response = await fetch('https://ipapi.co/json', { timeout: 3000 });
         if (response.ok) {
             const data = await response.json();
-            if (data && data.country && this.config.countryToLanguage[data.country_code]) {
+            if (data && data.country_code && this.config.countryToLanguage[data.country_code]) {
                 return data.country_code; // Return country code
             }
         }

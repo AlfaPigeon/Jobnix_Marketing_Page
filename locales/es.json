@@ -14,6 +14,12 @@
     "uploadProgress": "Subiendo...",
     "uploadSuccess": "¡CV subido exitosamente!"
   },
+  "modal": {
+    "demoRequested": "¡Demo Solicitada!",
+    "thankYou": "Gracias por tu interés en EmployCase. Nuestro equipo te contactará dentro de 24 horas para programar tu demo personalizada.",
+    "close": "Cerrar",
+    "sending": "Enviando..."
+  },
   "painPoints": {
     "title": "¿Es Esta Tu Realidad de Contratación?",
     "card1": {
@@ -86,12 +92,6 @@
   },
   "footer": {
     "copyright": "© 2025 EmployCase. Todos los Derechos Reservados."
-  },
-  "modal": {
-    "demoRequested": "¡Demo Solicitada!",
-    "thankYou": "Gracias por tu interés en EmployCase. Nuestro equipo te contactará dentro de 24 horas para programar tu demo personalizada.",
-    "close": "Cerrar",
-    "sending": "Enviando..."
   },
   "chat": {
     "greeting": "¡Hola! Estoy aquí para ayudar con tu solicitud. ¿Podrías subir tu CV por favor?",

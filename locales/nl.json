@@ -14,6 +14,12 @@
     "uploadProgress": "Uploaden...",
     "uploadSuccess": "CV succesvol geüpload!"
   },
+  "modal": {
+    "demoRequested": "Demo Aangevraagd!",
+    "thankYou": "Dank je voor je interesse in EmployCase. Ons team zal binnen 24 uur contact met je opnemen om je gepersonaliseerde demo in te plannen.",
+    "close": "Sluiten",
+    "sending": "Verzenden..."
+  },
   "painPoints": {
     "title": "Is Dit Uw Wervingsrealiteit?",
     "card1": {
