@@ -102,17 +102,19 @@ class LocalizationManager {
     try {
       // First try with a simple, reliable service
       try {
-        const response = await fetch('https://httpbin.org/ip', { timeout: 3000 });
+        const response = await fetch('https://ipapi.co/json', { timeout: 3000 });
         if (response.ok) {
-          // This won't give us country but we can skip for now
-          console.log('Network check successful');
+            const data = await response.json();
+            if (data && data.country && this.config.countryToLanguage[data.country_code]) {
+                return data.country_code; // Return country code
+            }
         }
       } catch (e) {
         console.log('Network check failed, using fallback');
       }
       
       // For demo purposes, we'll use browser language as fallback
-      return null;
+      return 'US';
     } catch (error) {
       console.error('Country detection failed:', error);
       return null;
