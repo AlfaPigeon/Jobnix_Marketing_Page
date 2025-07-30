@@ -1058,7 +1058,7 @@ function showDemoModal() {
 
     setTimeout(() => {
       const demoRequestedText = window.i18n ? window.i18n.getText('modal.demoRequested') : "Demo Requested!";
-      const thankYouText = window.i18n ? window.i18n.getText('modal.thankYou') : "Thank you for your interest in EmployCase. Our team will contact you within 24 hours to schedule your personalized demo.";
+      const thankYouText = window.i18n ? window.i18n.getText('modal.thankYou') : "Thank you for your interest in Employcase. Our team will contact you within 24 hours to schedule your personalized demo.";
       const closeText = window.i18n ? window.i18n.getText('modal.close') : "Close";
       
       modal.innerHTML = `

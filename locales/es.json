@@ -4,9 +4,9 @@
   },
   "hero": {
     "title": "Usa Herramientas de RRHH Inteligentes",
-    "subtitle": "Usa EmployCase como middleware en tu proceso de reclutamiento. Echa un vistazo a nuestro asistente de entrevistas inteligente.",
+    "subtitle": "Usa Employcase como middleware en tu proceso de reclutamiento. Echa un vistazo a nuestro asistente de entrevistas inteligente.",
     "requestDemo": "Solicitar una Demo",
-    "chatHeader": "Asistente de Entrevistas EmployCase",
+    "chatHeader": "Plataforma de Herramientas de RRHH Employcase",
     "chatStatus": "En línea",
     "chatPlaceholder": "Escribe tu respuesta...",
     "dropboxText": "Arrastra tu CV aquí o haz clic para explorar",
@@ -16,7 +16,7 @@
   },
   "modal": {
     "demoRequested": "¡Demo Solicitada!",
-    "thankYou": "Gracias por tu interés en EmployCase. Nuestro equipo te contactará dentro de 24 horas para programar tu demo personalizada.",
+    "thankYou": "Gracias por tu interés en Employcase. Nuestro equipo te contactará dentro de 24 horas para programar tu demo personalizada.",
     "close": "Cerrar",
     "sending": "Enviando..."
   },
@@ -98,11 +98,11 @@
   },
   "cta": {
     "title": "¿Listo para Revolucionar tu Contratación?",
-    "subtitle": "¡Ve de primera mano cómo EmployCase puede transformar tu proceso de reclutamiento!",
+    "subtitle": "¡Ve de primera mano cómo Employcase puede transformar tu proceso de reclutamiento!",
     "button": "¡Solicita tu Demo Gratuita Hoy!"
   },
   "footer": {
-    "copyright": "© 2025 EmployCase. Todos los Derechos Reservados."
+    "copyright": "© 2025 Employcase. Todos los Derechos Reservados."
   },
   "chat": {
     "greeting": "¡Hola! Estoy aquí para ayudar con tu solicitud. ¿Podrías subir tu CV por favor?",

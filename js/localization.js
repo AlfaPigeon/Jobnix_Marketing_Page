@@ -1,4 +1,4 @@
-// Internationalization (i18n) System for EmployCase
+// Internationalization (i18n) System for Employcase
 class LocalizationManager {
   constructor() {
     this.currentLanguage = 'en';

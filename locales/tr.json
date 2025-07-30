@@ -4,9 +4,9 @@
   },
   "hero": {
     "title": "Akıllı İK Araçlarını Kullanın",
-    "subtitle": "EmployCase'i işe alım sürecinizde ara yazılım olarak kullanın. Akıllı mülakat asistanımıza göz atın.",
+    "subtitle": "Employcase'i işe alım sürecinizde ara yazılım olarak kullanın. Akıllı mülakat asistanımıza göz atın.",
     "requestDemo": "Demo Talep Et",
-    "chatHeader": "EmployCase Mülakat Asistanı",
+    "chatHeader": "Employcase İK Araç Kutusu Platformu",
     "chatStatus": "Çevrimiçi",
     "chatPlaceholder": "Yanıtınızı yazın...",
     "dropboxText": "CV'nizi buraya sürükleyin veya göz atmak için tıklayın",
@@ -16,7 +16,7 @@
   },
   "modal": {
     "demoRequested": "Demo Talep Edildi!",
-    "thankYou": "EmployCase'e olan ilginiz için teşekkür ederiz. Ekibimiz kişiselleştirilmiş demonuzu planlamak için 24 saat içinde sizinle iletişime geçecek.",
+    "thankYou": "Employcase'e olan ilginiz için teşekkür ederiz. Ekibimiz kişiselleştirilmiş demonuzu planlamak için 24 saat içinde sizinle iletişime geçecek.",
     "close": "Kapat",
     "sending": "Gönderiliyor..."
   },
@@ -93,11 +93,11 @@
   },
   "cta": {
     "title": "İşe Alımınızı Devrimleştirmeye Hazır mısınız?",
-    "subtitle": "EmployCase'in işe alım sürecinizi nasıl dönüştürebileceğini ilk elden görün!",
+    "subtitle": "Employcase'in işe alım sürecinizi nasıl dönüştürebileceğini ilk elden görün!",
     "button": "Bugün Ücretsiz Demonuzu Talep Edin!"
   },
   "footer": {
-    "copyright": "© 2025 EmployCase. Tüm Hakları Saklıdır."
+    "copyright": "© 2025 Employcase. Tüm Hakları Saklıdır."
   },
   "chat": {
     "greeting": "Merhaba! Başvurunuzla ilgili yardımcı olmak için buradayım. Lütfen CV'nizi yükler misiniz?",

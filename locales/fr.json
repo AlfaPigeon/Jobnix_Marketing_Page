@@ -4,9 +4,9 @@
   },
   "hero": {
     "title": "Utilisez des Outils RH Intelligents",
-    "subtitle": "Utilisez EmployCase comme middleware dans votre processus de recrutement. Découvrez notre assistant d'entretien intelligent.",
+    "subtitle": "Utilisez Employcase comme middleware dans votre processus de recrutement. Découvrez notre assistant d'entretien intelligent.",
     "requestDemo": "Demander une Démo",
-    "chatHeader": "Assistant d'Entretien EmployCase",
+    "chatHeader": "Plateforme d'Outils RH Employcase",
     "chatStatus": "En ligne",
     "chatPlaceholder": "Tapez votre réponse...",
     "dropboxText": "Déposez votre CV ici ou cliquez pour parcourir",
@@ -92,15 +92,15 @@
   },
   "cta": {
     "title": "Prêt à Révolutionner Votre Recrutement ?",
-    "subtitle": "Voyez de première main comment EmployCase peut transformer votre processus de recrutement !",
+    "subtitle": "Voyez de première main comment Employcase peut transformer votre processus de recrutement !",
     "button": "Demandez Votre Démo Gratuite Aujourd'hui !"
   },
   "footer": {
-    "copyright": "© 2025 EmployCase. Tous Droits Réservés."
+    "copyright": "© 2025 Employcase. Tous Droits Réservés."
   },
   "modal": {
     "demoRequested": "Démo Demandée !",
-    "thankYou": "Merci pour votre intérêt envers EmployCase. Notre équipe vous contactera dans les 24 heures pour programmer votre démo personnalisée.",
+    "thankYou": "Merci pour votre intérêt envers Employcase. Notre équipe vous contactera dans les 24 heures pour programmer votre démo personnalisée.",
     "close": "Fermer",
     "sending": "Envoi en cours..."
   },

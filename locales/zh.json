@@ -4,9 +4,9 @@
   },
   "hero": {
     "title": "使用智能人力资源工具",
-    "subtitle": "使用EmployCase作为您招聘流程中的中间件。查看我们的智能面试助手。",
+    "subtitle": "使用Employcase作为您招聘流程中的中间件。查看我们的智能面试助手。",
     "requestDemo": "申请演示",
-    "chatHeader": "EmployCase面试助手",
+    "chatHeader": "Employcase人力资源工具箱平台",
     "chatStatus": "在线",
     "chatPlaceholder": "输入您的回复...",
     "dropboxText": "将您的简历拖到这里或点击浏览",
@@ -92,15 +92,15 @@
   },
   "cta": {
     "title": "准备好革新您的招聘吗？",
-    "subtitle": "亲身体验EmployCase如何改变您的招聘流程！",
+    "subtitle": "亲身体验Employcase如何改变您的招聘流程！",
     "button": "立即申请免费演示！"
   },
   "footer": {
-    "copyright": "© 2025 EmployCase. 保留所有权利。"
+    "copyright": "© 2025 Employcase. 保留所有权利。"
   },
   "modal": {
     "demoRequested": "演示已请求！",
-    "thankYou": "感谢您对EmployCase的关注。我们的团队将在24小时内联系您，安排您的个性化演示。",
+    "thankYou": "感谢您对Employcase的关注。我们的团队将在24小时内联系您，安排您的个性化演示。",
     "close": "关闭",
     "sending": "发送中..."
   },

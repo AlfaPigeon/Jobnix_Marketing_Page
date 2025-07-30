@@ -4,9 +4,9 @@
   },
   "hero": {
     "title": "インテリジェントなHRツールを使用",
-    "subtitle": "採用プロセスのミドルウェアとしてEmployCaseを使用してください。私たちのスマートな面接アシスタントをご覧ください。",
+    "subtitle": "採用プロセスのミドルウェアとしてEmploycaseを使用してください。私たちのスマートな面接アシスタントをご覧ください。",
     "requestDemo": "デモをリクエスト",
-    "chatHeader": "EmployCase面接アシスタント",
+    "chatHeader": "EmploycaseHRツールボックスプラットフォーム",
     "chatStatus": "オンライン",
     "chatPlaceholder": "回答を入力してください...",
     "dropboxText": "履歴書をここにドロップするか、クリックして参照",
@@ -28,7 +28,7 @@
   },
   "modal": {
     "demoRequested": "デモがリクエストされました！",
-    "thankYou": "EmployCaseへのご関心をありがとうございます。当社のチームが24時間以内にご連絡し、パーソナライズされたデモをスケジュールいたします。",
+    "thankYou": "Employcaseへのご関心をありがとうございます。当社のチームが24時間以内にご連絡し、パーソナライズされたデモをスケジュールいたします。",
     "close": "閉じる",
     "sending": "送信中..."
   },
@@ -105,11 +105,11 @@
   },
   "cta": {
     "title": "採用を革命化する準備はできていますか？",
-    "subtitle": "EmployCaseがあなたの採用プロセスをどのように変革できるか、直接ご覧ください！",
+    "subtitle": "Employcaseがあなたの採用プロセスをどのように変革できるか、直接ご覧ください！",
     "button": "今すぐ無料デモをリクエストしてください！"
   },
   "footer": {
-    "copyright": "© 2025 EmployCase. 全著作権所有。"
+    "copyright": "© 2025 Employcase. 全著作権所有。"
   },
   "chat": {
     "greeting": "こんにちは！あなたの応募をお手伝いします。履歴書をアップロードしていただけますか？",

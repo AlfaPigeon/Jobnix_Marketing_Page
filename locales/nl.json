@@ -4,9 +4,9 @@
   },
   "hero": {
     "title": "Gebruik Intelligente HR-Tools",
-    "subtitle": "Gebruik EmployCase als middleware in uw wervingsproces. Bekijk onze slimme interview-assistent.",
+    "subtitle": "Gebruik Employcase als middleware in uw wervingsproces. Bekijk onze slimme interview-assistent.",
     "requestDemo": "Demo Aanvragen",
-    "chatHeader": "EmployCase Interview Assistent",
+    "chatHeader": "Employcase HR-Toolbox Platform",
     "chatStatus": "Online",
     "chatPlaceholder": "Typ uw antwoord...",
     "dropboxText": "Sleep uw CV hier naartoe of klik om te bladeren",
@@ -16,7 +16,7 @@
   },
   "modal": {
     "demoRequested": "Demo Aangevraagd!",
-    "thankYou": "Dank je voor je interesse in EmployCase. Ons team zal binnen 24 uur contact met je opnemen om je gepersonaliseerde demo in te plannen.",
+    "thankYou": "Dank je voor je interesse in Employcase. Ons team zal binnen 24 uur contact met je opnemen om je gepersonaliseerde demo in te plannen.",
     "close": "Sluiten",
     "sending": "Verzenden..."
   },
@@ -93,11 +93,11 @@
   },
   "cta": {
     "title": "Klaar om Uw Werving te Revolutioneren?",
-    "subtitle": "Zie uit de eerste hand hoe EmployCase uw wervingsproces kan transformeren!",
+    "subtitle": "Zie uit de eerste hand hoe Employcase uw wervingsproces kan transformeren!",
     "button": "Vraag Vandaag Uw Gratis Demo Aan!"
   },
   "footer": {
-    "copyright": "© 2025 EmployCase. Alle Rechten Voorbehouden."
+    "copyright": "© 2025 Employcase. Alle Rechten Voorbehouden."
   },
   "chat": {
     "greeting": "Hallo! Ik ben hier om te helpen met uw sollicitatie. Kunt u uw CV uploaden alstublieft?",

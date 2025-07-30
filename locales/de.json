@@ -4,9 +4,9 @@
   },
   "hero": {
     "title": "Intelligente HR-Tools Verwenden",
-    "subtitle": "Verwenden Sie EmployCase als Middleware in Ihrem Rekrutierungsprozess. Schauen Sie sich unseren intelligenten Interview-Assistenten an.",
+    "subtitle": "Verwenden Sie Employcase als Middleware in Ihrem Rekrutierungsprozess. Schauen Sie sich unseren intelligenten Interview-Assistenten an.",
     "requestDemo": "Demo Anfordern",
-    "chatHeader": "EmployCase Interview-Assistent",
+    "chatHeader": "Employcase HR-Toolbox-Plattform",
     "chatStatus": "Online",
     "chatPlaceholder": "Geben Sie Ihre Antwort ein...",
     "dropboxText": "Ziehen Sie Ihren Lebenslauf hier hin oder klicken Sie zum Durchsuchen",
@@ -92,15 +92,15 @@
   },
   "cta": {
     "title": "Bereit, Ihre Einstellung zu Revolutionieren?",
-    "subtitle": "Sehen Sie aus erster Hand, wie EmployCase Ihren Rekrutierungsprozess transformieren kann!",
+    "subtitle": "Sehen Sie aus erster Hand, wie Employcase Ihren Rekrutierungsprozess transformieren kann!",
     "button": "Fordern Sie Heute Ihre Kostenlose Demo An!"
   },
   "footer": {
-    "copyright": "© 2025 EmployCase. Alle Rechte Vorbehalten."
+    "copyright": "© 2025 Employcase. Alle Rechte Vorbehalten."
   },
   "modal": {
     "demoRequested": "Demo Angefordert!",
-    "thankYou": "Vielen Dank für Ihr Interesse an EmployCase. Unser Team wird Sie innerhalb von 24 Stunden kontaktieren, um Ihre personalisierte Demo zu planen.",
+    "thankYou": "Vielen Dank für Ihr Interesse an Employcase. Unser Team wird Sie innerhalb von 24 Stunden kontaktieren, um Ihre personalisierte Demo zu planen.",
     "close": "Schließen",
     "sending": "Wird gesendet..."
   },

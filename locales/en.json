@@ -4,9 +4,9 @@
   },
   "hero": {
     "title": "Use Intelligent HR Tools",
-    "subtitle": "Use EmployCase as middleware in your recruitment process. Check out our smart interview assistant.",
+    "subtitle": "Use Employcase as middleware in your recruitment process. Check out our smart interview assistant.",
     "requestDemo": "Request a Demo",
-    "chatHeader": "EmployCase Interview Assistant",
+    "chatHeader": "Employcase HR Toolbox Platform",
     "chatStatus": "Online",
     "chatPlaceholder": "Type your response...",
     "dropboxText": "Drop your CV here or click to browse",
@@ -16,7 +16,7 @@
   },
   "modal": {
     "demoRequested": "Demo Requested!",
-    "thankYou": "Thank you for your interest in EmployCase. Our team will contact you within 24 hours to schedule your personalized demo.",
+    "thankYou": "Thank you for your interest in Employcase. Our team will contact you within 24 hours to schedule your personalized demo.",
     "close": "Close",
     "sending": "Sending..."
   },
@@ -98,11 +98,11 @@
   },
   "cta": {
     "title": "Ready to Revolutionize Your Hiring?",
-    "subtitle": "See firsthand how EmployCase can transform your recruitment process!",
+    "subtitle": "See firsthand how Employcase can transform your recruitment process!",
     "button": "Request Your Free Demo Today!"
   },
   "footer": {
-    "copyright": "© 2025 EmployCase. All Rights Reserved."
+    "copyright": "© 2025 Employcase. All Rights Reserved."
   },
   "chat": {
     "greeting": "Hello! I'm here to help with your application. Could you please upload your CV?",

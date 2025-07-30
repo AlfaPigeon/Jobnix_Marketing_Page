@@ -1,6 +1,6 @@
-# EmployCase Website Localization
+# Employcase Website Localization
 
-This project implements a comprehensive internationalization (i18n) system for the EmployCase marketing website, supporting 14 languages with automatic language detection and country-based localization.
+This project implements a comprehensive internationalization (i18n) system for the Employcase marketing website, supporting 14 languages with automatic language detection and country-based localization.
 
 ## 🌍 Supported Languages
 
@@ -106,7 +106,7 @@ This project implements a comprehensive internationalization (i18n) system for t
 Content is marked with `data-i18n` attributes:
 ```html
 <h1 data-i18n="hero.title">Use Intelligent HR Tools</h1>
-<p data-i18n="hero.subtitle">Use EmployCase as middleware...</p>
+<p data-i18n="hero.subtitle">Use Employcase as middleware...</p>
 ```
 
 ### JavaScript API
