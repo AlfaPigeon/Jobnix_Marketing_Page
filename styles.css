@@ -52,6 +52,14 @@ body {
     color: #2563eb;
 }
 
+.nav-logo .logo-image {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    max-width: 200px;
+}
+
 .nav-logo i {
     margin-right: 10px;
     font-size: 28px;
@@ -165,6 +173,11 @@ body {
     
     .nav-logo {
         font-size: 20px;
+    }
+    
+    .nav-logo .logo-image {
+        height: 32px;
+        max-width: 150px;
     }
     
     .nav-logo i {
